@@ -141,8 +141,11 @@
 		93346DEE17F7CBE000F944CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DED17F7CBE000F944CB /* AppDelegate.m */; };
 		93346DF117F7CBE000F944CB /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF017F7CBE000F944CB /* HelloWorldLayer.m */; };
 		93346DF417F7CBE000F944CB /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF317F7CBE000F944CB /* IntroLayer.m */; };
-		93346E0917F9ED5700F944CB /* ninjaAnim.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93346E0717F9ED5700F944CB /* ninjaAnim.plist */; };
-		93346E0A17F9ED5700F944CB /* ninjaAnim.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346E0817F9ED5700F944CB /* ninjaAnim.png */; };
+		93346E0F17FA64EE00F944CB /* field.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 93346E0E17FA64EE00F944CB /* field.jpeg */; };
+		93346E1617FA6FC400F944CB /* silverbat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1217FA6FC400F944CB /* silverbat.plist */; };
+		93346E1717FA6FC400F944CB /* silverbat.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1317FA6FC400F944CB /* silverbat.png */; };
+		93346E1A17FA7C5A00F944CB /* ninja.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1817FA7C5A00F944CB /* ninja.plist */; };
+		93346E1B17FA7C5A00F944CB /* ninja.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1917FA7C5A00F944CB /* ninja.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -427,8 +430,11 @@
 		93346DF017F7CBE000F944CB /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		93346DF217F7CBE000F944CB /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		93346DF317F7CBE000F944CB /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
-		93346E0717F9ED5700F944CB /* ninjaAnim.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ninjaAnim.plist; path = Resources/Sprites/ninjaAnim.plist; sourceTree = "<group>"; };
-		93346E0817F9ED5700F944CB /* ninjaAnim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ninjaAnim.png; path = Resources/Sprites/ninjaAnim.png; sourceTree = "<group>"; };
+		93346E0E17FA64EE00F944CB /* field.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = field.jpeg; path = Resources/Backgrounds/field.jpeg; sourceTree = "<group>"; };
+		93346E1217FA6FC400F944CB /* silverbat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = silverbat.plist; path = Resources/Sprites/silverbat.plist; sourceTree = "<group>"; };
+		93346E1317FA6FC400F944CB /* silverbat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = silverbat.png; path = Resources/Sprites/silverbat.png; sourceTree = "<group>"; };
+		93346E1817FA7C5A00F944CB /* ninja.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ninja.plist; path = Resources/Sprites/ninja.plist; sourceTree = "<group>"; };
+		93346E1917FA7C5A00F944CB /* ninja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ninja.png; path = Resources/Sprites/ninja.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -505,6 +511,7 @@
 		93346C5C17F7CBDB00F944CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				93346E0B17FA648A00F944CB /* Backgrounds */,
 				93346DFA17F7CE9C00F944CB /* Sprites */,
 				93346C5D17F7CBDB00F944CB /* Default.png */,
 				93346C5F17F7CBDB00F944CB /* Default@2x.png */,
@@ -887,10 +894,20 @@
 		93346DFA17F7CE9C00F944CB /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				93346E0717F9ED5700F944CB /* ninjaAnim.plist */,
-				93346E0817F9ED5700F944CB /* ninjaAnim.png */,
+				93346E1817FA7C5A00F944CB /* ninja.plist */,
+				93346E1917FA7C5A00F944CB /* ninja.png */,
+				93346E1217FA6FC400F944CB /* silverbat.plist */,
+				93346E1317FA6FC400F944CB /* silverbat.png */,
 			);
 			name = Sprites;
+			sourceTree = "<group>";
+		};
+		93346E0B17FA648A00F944CB /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				93346E0E17FA64EE00F944CB /* field.jpeg */,
+			);
+			name = Backgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -956,8 +973,11 @@
 				93346C7017F7CBDB00F944CB /* Icon@2x.png in Resources */,
 				93346C7317F7CBDB00F944CB /* iTunesArtwork in Resources */,
 				93346DCC17F7CBE000F944CB /* ChangeLog in Resources */,
-				93346E0917F9ED5700F944CB /* ninjaAnim.plist in Resources */,
-				93346E0A17F9ED5700F944CB /* ninjaAnim.png in Resources */,
+				93346E0F17FA64EE00F944CB /* field.jpeg in Resources */,
+				93346E1617FA6FC400F944CB /* silverbat.plist in Resources */,
+				93346E1717FA6FC400F944CB /* silverbat.png in Resources */,
+				93346E1A17FA7C5A00F944CB /* ninja.plist in Resources */,
+				93346E1B17FA7C5A00F944CB /* ninja.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
