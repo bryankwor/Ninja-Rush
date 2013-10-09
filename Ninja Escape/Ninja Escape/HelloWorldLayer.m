@@ -58,10 +58,12 @@
             // Initialize
             screenSize = [[CCDirector sharedDirector] winSize];
             CGPoint spawnZone;
-            spawnZone.x = arc4random() % 340;
-            spawnZone.y = arc4random() % (int)(screenSize.height - screenSize.height/6);
-            if (spawnZone.x < (screenSize.height/6))
-                spawnZone.x += screenSize.height/6;
+            spawnZone.y = arc4random() % (int)screenSize.height;
+            spawnZone.x = arc4random() % (int)(screenSize.width - screenSize.width/7);
+            if (spawnZone.x < (screenSize.width/7))
+                spawnZone.x += screenSize.width/7;
+            if (spawnZone.x > (screenSize.width-screenSize.width/7))
+                spawnZone.x -= screenSize.width/7;
             
             // Set background
             
@@ -150,7 +152,7 @@
             
             // Ninja
             self.ninja = [CCSprite spriteWithSpriteFrameName:@"ninja01.png"];
-            self.ninja.position = ccp(screenSize.width/2, screenSize.height/7);
+            self.ninja.position = ccp(screenSize.width/8, screenSize.height/2);
             self.ninjaDown = [CCRepeatForever actionWithAction:
                               [CCAnimate actionWithAnimation:ninjaDownAnim]];
             self.ninjaSide = [CCRepeatForever actionWithAction:
@@ -173,7 +175,7 @@
             
             self.silverbat.flipX = YES;
             [self.silverbat runAction:self.silverbatSide];
-            [self schedule:@selector(nextFrame:)];
+            [self schedule:@selector(moveSilverbat:) interval:5];
             
             
             self.touchEnabled = YES;
@@ -204,7 +206,7 @@
 {
     // Calculate move duration based on screen size
     CGPoint location = [self convertTouchToNodeSpace:touch];
-    float ninjaVelocity = screenSize.width / 8.0;
+    float ninjaVelocity = screenSize.width / 6.0;
     CGPoint moveDiff = ccpSub(location, self.ninja.position);
     float distanceToMove = ccpLength(moveDiff);
     float moveDuration = distanceToMove / ninjaVelocity;
@@ -215,7 +217,7 @@
     
     [self.ninja stopAction:self.ninjaMove];
     
-    if (!ninjaMoving || ninjaMoving)
+    if (!ninjaMoving)
     {
         if (moveAngle > 45 && moveAngle < 135)
         {
@@ -253,13 +255,85 @@
     ninjaMoving = NO;
 }
 
--(void) nextFrame:(ccTime)dt
+-(void) moveSilverbat:(ccTime)dt
 {
-    if (self.silverbat.position.x <= screenSize.width + 1)
+    // Initialize variables
+    CGPoint positionChange;
+    int negate;
+    
+    // Calculate new position to move to
+    positionChange.x = arc4random()%20;
+    positionChange.x += 10;
+    negate = arc4random()%2;
+    if (negate == 1)
+        positionChange.x *= -1;
+    
+    positionChange.y = arc4random()%20;
+    positionChange.y += 10;
+    negate = arc4random()%2;
+    if (negate == 1)
+        positionChange.y *= -1;
+    
+    // Calculate move duration based on screen size
+    CGPoint newLocation;
+    newLocation.x = positionChange.x + self.silverbat.position.x;
+    newLocation.y = positionChange.y + self.silverbat.position.y;
+    
+    // Return if new location is out of bounds
+    if (newLocation.x >= (screenSize.width-screenSize.width/7)-1 ||
+        newLocation.x <= (screenSize.width/7+1) ||
+        newLocation.y >= screenSize.height-1 || newLocation.y <= 1)
+        return;
+    
+    float batVelocity = screenSize.width / 12.0;
+    CGPoint moveDiff = ccpSub(newLocation, self.silverbat.position);
+    float distanceToMove = ccpLength(moveDiff);
+    float moveDuration = distanceToMove / batVelocity;
+    
+    float moveAngle = ((atan2f(moveDiff.y, moveDiff.x)) * 180) / M_PI;
+    if (moveAngle < 0)
+        moveAngle += 360;
+    
+    [self.silverbat stopAction:self.silverbatUp];
+    [self.silverbat stopAction:self.silverbatSide];
+    [self.silverbat stopAction:self.silverbatDown];
+
+    if (moveAngle > 45 && moveAngle < 135)
     {
-        
+        self.silverbat.flipX = NO;
+        [self.silverbat runAction:self.silverbatUp];
     }
-    self.silverbat.position = ccp(self.silverbat.position.x + arc4random()%5, self.silverbat.position.y + arc4random()%5);
+    else if (moveAngle > 135 && moveAngle < 225)
+    {
+        self.silverbat.flipX = NO;
+        [self.silverbat runAction:self.silverbatSide];
+    }
+    else if (moveAngle > 225 && moveAngle < 315)
+    {
+        self.silverbat.flipX = NO;
+        [self.silverbat runAction:self.silverbatDown];
+    }
+    else
+    {
+        self.silverbat.flipX = YES;
+        [self.silverbat runAction:self.silverbatSide];
+    }
+    
+    self.silverbatMove = [CCSequence actions:[CCMoveTo actionWithDuration:moveDuration position:newLocation], nil];
+    
+    [self.silverbat runAction:self.silverbatMove];
+    /*
+    if (self.silverbat.position.y >= screenSize.height-1)
+        self.silverbat.position = ccp(self.silverbat.position.x + positionChange.x, self.silverbat.position.y - arc4random()%5);
+    else if (self.silverbat.position.y <= 1)
+        self.silverbat.position = ccp(self.silverbat.position.x + positionChange.x, self.silverbat.position.y + arc4random()%5);
+    else if (self.silverbat.position.x <= (screenSize.width/7+1))
+        self.silverbat.position = ccp(self.silverbat.position.x + arc4random()%5, self.silverbat.position.y + positionChange.y);
+    else if (self.silverbat.position.x >= (screenSize.width-screenSize.width/7)-1)
+        self.silverbat.position = ccp(self.silverbat.position.x - arc4random()%5, self.silverbat.position.y + positionChange.y);
+    else
+        self.silverbat.position = ccp(self.silverbat.position.x + positionChange.x, self.silverbat.position.y + positionChange.y);
+     */
 }
 
 // on "dealloc" you need to release all your retained objects
