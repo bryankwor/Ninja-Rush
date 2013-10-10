@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		931ABB5318061F3B00CD42F0 /* Silverbat.m in Sources */ = {isa = PBXBuildFile; fileRef = 931ABB5218061F3B00CD42F0 /* Silverbat.m */; };
 		93346C4817F7CBDB00F944CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C4717F7CBDB00F944CB /* QuartzCore.framework */; };
 		93346C4A17F7CBDB00F944CB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C4917F7CBDB00F944CB /* OpenGLES.framework */; };
 		93346C4C17F7CBDB00F944CB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C4B17F7CBDB00F944CB /* OpenAL.framework */; };
@@ -139,7 +140,7 @@
 		93346DE617F7CBE000F944CB /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 93346DE517F7CBE000F944CB /* vec4.c */; };
 		93346DEB17F7CBE000F944CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DEA17F7CBE000F944CB /* main.m */; };
 		93346DEE17F7CBE000F944CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DED17F7CBE000F944CB /* AppDelegate.m */; };
-		93346DF117F7CBE000F944CB /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF017F7CBE000F944CB /* HelloWorldLayer.m */; };
+		93346DF117F7CBE000F944CB /* NinjaEscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF017F7CBE000F944CB /* NinjaEscape.m */; };
 		93346DF417F7CBE000F944CB /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF317F7CBE000F944CB /* IntroLayer.m */; };
 		93346E0F17FA64EE00F944CB /* field.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 93346E0E17FA64EE00F944CB /* field.jpeg */; };
 		93346E1617FA6FC400F944CB /* silverbat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1217FA6FC400F944CB /* silverbat.plist */; };
@@ -149,6 +150,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		931ABB5118061F3B00CD42F0 /* Silverbat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Silverbat.h; sourceTree = "<group>"; };
+		931ABB5218061F3B00CD42F0 /* Silverbat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Silverbat.m; sourceTree = "<group>"; };
 		93346C4417F7CBDB00F944CB /* Ninja Escape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Escape.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93346C4717F7CBDB00F944CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		93346C4917F7CBDB00F944CB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -426,8 +429,8 @@
 		93346DEA17F7CBE000F944CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93346DEC17F7CBE000F944CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93346DED17F7CBE000F944CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		93346DEF17F7CBE000F944CB /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		93346DF017F7CBE000F944CB /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		93346DEF17F7CBE000F944CB /* NinjaEscape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NinjaEscape.h; sourceTree = "<group>"; };
+		93346DF017F7CBE000F944CB /* NinjaEscape.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NinjaEscape.m; sourceTree = "<group>"; };
 		93346DF217F7CBE000F944CB /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		93346DF317F7CBE000F944CB /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		93346E0E17FA64EE00F944CB /* field.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = field.jpeg; path = Resources/Backgrounds/field.jpeg; sourceTree = "<group>"; };
@@ -497,8 +500,10 @@
 			children = (
 				93346DEC17F7CBE000F944CB /* AppDelegate.h */,
 				93346DED17F7CBE000F944CB /* AppDelegate.m */,
-				93346DEF17F7CBE000F944CB /* HelloWorldLayer.h */,
-				93346DF017F7CBE000F944CB /* HelloWorldLayer.m */,
+				93346DEF17F7CBE000F944CB /* NinjaEscape.h */,
+				93346DF017F7CBE000F944CB /* NinjaEscape.m */,
+				931ABB5118061F3B00CD42F0 /* Silverbat.h */,
+				931ABB5218061F3B00CD42F0 /* Silverbat.m */,
 				93346DF217F7CBE000F944CB /* IntroLayer.h */,
 				93346DF317F7CBE000F944CB /* IntroLayer.m */,
 				93346C5C17F7CBDB00F944CB /* Resources */,
@@ -1000,6 +1005,7 @@
 				93346C9317F7CBDC00F944CB /* CCActionPageTurn3D.m in Sources */,
 				93346C9617F7CBDC00F944CB /* CCActionProgressTimer.m in Sources */,
 				93346C9917F7CBDC00F944CB /* CCActionTiledGrid.m in Sources */,
+				931ABB5318061F3B00CD42F0 /* Silverbat.m in Sources */,
 				93346C9C17F7CBDC00F944CB /* CCActionTween.m in Sources */,
 				93346C9F17F7CBDC00F944CB /* CCAnimation.m in Sources */,
 				93346CA217F7CBDC00F944CB /* CCAnimationCache.m in Sources */,
@@ -1098,7 +1104,7 @@
 				93346DE617F7CBE000F944CB /* vec4.c in Sources */,
 				93346DEB17F7CBE000F944CB /* main.m in Sources */,
 				93346DEE17F7CBE000F944CB /* AppDelegate.m in Sources */,
-				93346DF117F7CBE000F944CB /* HelloWorldLayer.m in Sources */,
+				93346DF117F7CBE000F944CB /* NinjaEscape.m in Sources */,
 				93346DF417F7CBE000F944CB /* IntroLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1154,9 +1160,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ninja Escape/Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"Ninja Escape/libs/kazmath/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"Ninja Escape/libs/kazmath/include\"";
 				INFOPLIST_FILE = "Ninja Escape/Resources/Info.plist";
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -1175,9 +1179,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ninja Escape/Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"Ninja Escape/libs/kazmath/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"Ninja Escape/libs/kazmath/include\"";
 				INFOPLIST_FILE = "Ninja Escape/Resources/Info.plist";
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -1209,6 +1211,7 @@
 				93346DF917F7CBE000F944CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
