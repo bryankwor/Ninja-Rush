@@ -1,9 +1,9 @@
 //
-//  MyCocos2DClass.m
-//  Ninja Escape
+// MyCocos2DClass.m
+// Ninja Escape
 //
-//  Created by Bryan Worrell on 10/9/13.
-//  Copyright 2013 Bryan Worrell. All rights reserved.
+// Created by Bryan Worrell on 10/9/13.
+// Copyright 2013 Bryan Worrell. All rights reserved.
 //
 
 #import "Silverbat.h"
@@ -38,7 +38,7 @@
         
         // Cache sprite frames and texture
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"silverbat.plist"];
-   
+        
         // Create sprite batch nodes
         CCSpriteBatchNode *silverbatSheet = [CCSpriteBatchNode batchNodeWithFile:@"silverbat.png"];
         [self addChild:silverbatSheet];
@@ -90,26 +90,26 @@
     
     return self;
 }
-        
+
 -(void) moveSilverbat:(ccTime)dt
 {
     // Initialize variables
     CGPoint positionChange;
     int negate;
-            
+    
     // Calculate new position to move to
     positionChange.x = arc4random()%20;
     positionChange.x += 10;
     negate = arc4random()%2;
     if (negate == 1)
-    positionChange.x *= -1;
-            
+        positionChange.x *= -1;
+    
     positionChange.y = arc4random()%20;
     positionChange.y += 10;
     negate = arc4random()%2;
     if (negate == 1)
-    positionChange.y *= -1;
-            
+        positionChange.y *= -1;
+    
     // Calculate move duration based on screen size
     CGPoint newLocation;
     newLocation.x = positionChange.x + self.silverbat.position.x;
@@ -120,20 +120,20 @@
         newLocation.x <= (screenSize.width/7+1) ||
         newLocation.y >= screenSize.height-1 || newLocation.y <= 1)
         return;
-            
+    
     float batVelocity = screenSize.width / 12.0;
     CGPoint moveDiff = ccpSub(newLocation, self.silverbat.position);
     float distanceToMove = ccpLength(moveDiff);
     float moveDuration = distanceToMove / batVelocity;
-            
+    
     float moveAngle = ((atan2f(moveDiff.y, moveDiff.x)) * 180) / M_PI;
     if (moveAngle < 0)
         moveAngle += 360;
-            
+    
     [self.silverbat stopAction:self.silverbatUp];
     [self.silverbat stopAction:self.silverbatSide];
     [self.silverbat stopAction:self.silverbatDown];
-            
+    
     if (moveAngle > 45 && moveAngle < 135)
     {
         self.silverbat.flipX = NO;
@@ -154,9 +154,9 @@
         self.silverbat.flipX = YES;
         [self.silverbat runAction:self.silverbatSide];
     }
-            
+    
     self.silverbatMove = [CCSequence actions:[CCMoveTo actionWithDuration:moveDuration position:newLocation], nil];
-            
+    
     [self.silverbat runAction:self.silverbatMove];
 }
 

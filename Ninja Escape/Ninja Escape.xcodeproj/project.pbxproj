@@ -140,7 +140,7 @@
 		93346DE617F7CBE000F944CB /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 93346DE517F7CBE000F944CB /* vec4.c */; };
 		93346DEB17F7CBE000F944CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DEA17F7CBE000F944CB /* main.m */; };
 		93346DEE17F7CBE000F944CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DED17F7CBE000F944CB /* AppDelegate.m */; };
-		93346DF117F7CBE000F944CB /* NinjaEscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF017F7CBE000F944CB /* NinjaEscape.m */; };
+		93346DF117F7CBE000F944CB /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF017F7CBE000F944CB /* Game.m */; };
 		93346DF417F7CBE000F944CB /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF317F7CBE000F944CB /* IntroLayer.m */; };
 		93346E0F17FA64EE00F944CB /* field.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 93346E0E17FA64EE00F944CB /* field.jpeg */; };
 		93346E1617FA6FC400F944CB /* silverbat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1217FA6FC400F944CB /* silverbat.plist */; };
@@ -429,8 +429,8 @@
 		93346DEA17F7CBE000F944CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93346DEC17F7CBE000F944CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93346DED17F7CBE000F944CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		93346DEF17F7CBE000F944CB /* NinjaEscape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NinjaEscape.h; sourceTree = "<group>"; };
-		93346DF017F7CBE000F944CB /* NinjaEscape.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NinjaEscape.m; sourceTree = "<group>"; };
+		93346DEF17F7CBE000F944CB /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		93346DF017F7CBE000F944CB /* Game.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		93346DF217F7CBE000F944CB /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		93346DF317F7CBE000F944CB /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		93346E0E17FA64EE00F944CB /* field.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = field.jpeg; path = Resources/Backgrounds/field.jpeg; sourceTree = "<group>"; };
@@ -500,8 +500,8 @@
 			children = (
 				93346DEC17F7CBE000F944CB /* AppDelegate.h */,
 				93346DED17F7CBE000F944CB /* AppDelegate.m */,
-				93346DEF17F7CBE000F944CB /* NinjaEscape.h */,
-				93346DF017F7CBE000F944CB /* NinjaEscape.m */,
+				93346DEF17F7CBE000F944CB /* Game.h */,
+				93346DF017F7CBE000F944CB /* Game.m */,
 				931ABB5118061F3B00CD42F0 /* Silverbat.h */,
 				931ABB5218061F3B00CD42F0 /* Silverbat.m */,
 				93346DF217F7CBE000F944CB /* IntroLayer.h */,
@@ -1104,7 +1104,7 @@
 				93346DE617F7CBE000F944CB /* vec4.c in Sources */,
 				93346DEB17F7CBE000F944CB /* main.m in Sources */,
 				93346DEE17F7CBE000F944CB /* AppDelegate.m in Sources */,
-				93346DF117F7CBE000F944CB /* NinjaEscape.m in Sources */,
+				93346DF117F7CBE000F944CB /* Game.m in Sources */,
 				93346DF417F7CBE000F944CB /* IntroLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

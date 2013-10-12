@@ -10,10 +10,5 @@
 #import "cocos2d.h"
 
 @interface Silverbat : CCSprite
-{
-    
-}
-
-
 
 @end
