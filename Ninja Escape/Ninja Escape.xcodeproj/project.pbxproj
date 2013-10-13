@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		931ABB5318061F3B00CD42F0 /* Silverbat.m in Sources */ = {isa = PBXBuildFile; fileRef = 931ABB5218061F3B00CD42F0 /* Silverbat.m */; };
+		931ABB5C1809FC8900CD42F0 /* Ninja.m in Sources */ = {isa = PBXBuildFile; fileRef = 931ABB5B1809FC8900CD42F0 /* Ninja.m */; };
 		93346C4817F7CBDB00F944CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C4717F7CBDB00F944CB /* QuartzCore.framework */; };
 		93346C4A17F7CBDB00F944CB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C4917F7CBDB00F944CB /* OpenGLES.framework */; };
 		93346C4C17F7CBDB00F944CB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C4B17F7CBDB00F944CB /* OpenAL.framework */; };
@@ -152,6 +153,8 @@
 /* Begin PBXFileReference section */
 		931ABB5118061F3B00CD42F0 /* Silverbat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Silverbat.h; sourceTree = "<group>"; };
 		931ABB5218061F3B00CD42F0 /* Silverbat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Silverbat.m; sourceTree = "<group>"; };
+		931ABB5A1809FC8900CD42F0 /* Ninja.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ninja.h; sourceTree = "<group>"; };
+		931ABB5B1809FC8900CD42F0 /* Ninja.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ninja.m; sourceTree = "<group>"; };
 		93346C4417F7CBDB00F944CB /* Ninja Escape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Escape.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93346C4717F7CBDB00F944CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		93346C4917F7CBDB00F944CB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -502,6 +505,8 @@
 				93346DED17F7CBE000F944CB /* AppDelegate.m */,
 				93346DEF17F7CBE000F944CB /* Game.h */,
 				93346DF017F7CBE000F944CB /* Game.m */,
+				931ABB5A1809FC8900CD42F0 /* Ninja.h */,
+				931ABB5B1809FC8900CD42F0 /* Ninja.m */,
 				931ABB5118061F3B00CD42F0 /* Silverbat.h */,
 				931ABB5218061F3B00CD42F0 /* Silverbat.m */,
 				93346DF217F7CBE000F944CB /* IntroLayer.h */,
@@ -1077,6 +1082,7 @@
 				93346D8317F7CBDF00F944CB /* CCFileUtils.m in Sources */,
 				93346D8617F7CBDF00F944CB /* CCProfiling.m in Sources */,
 				93346D8817F7CBDF00F944CB /* ccUtils.c in Sources */,
+				931ABB5C1809FC8900CD42F0 /* Ninja.m in Sources */,
 				93346D8C17F7CBDF00F944CB /* CCVertex.m in Sources */,
 				93346D8F17F7CBDF00F944CB /* CGPointExtension.m in Sources */,
 				93346D9217F7CBDF00F944CB /* NSThread+performBlock.m in Sources */,

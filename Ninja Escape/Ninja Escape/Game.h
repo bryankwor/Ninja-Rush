@@ -9,11 +9,17 @@
 
 #import <GameKit/GameKit.h>
 #import "cocos2d.h"
+#import "Ninja.h"
 
 @interface Game : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
-
+    CGSize screenSize;
+    BOOL ninjaMoving;
+    CCAction *ninjaMove;
+    Ninja *ninja;
 }
+
+@property (nonatomic, strong) Ninja *ninja;
 
 +(CCScene *) scene;
 

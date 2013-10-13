@@ -36,7 +36,7 @@
         if (spawnZone.x > (screenSize.width-screenSize.width/7))
             spawnZone.x -= screenSize.width/7;
         
-        // Cache sprite frames and texture
+        // Cache sprite frames
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"silverbat.plist"];
         
         // Create sprite batch nodes
