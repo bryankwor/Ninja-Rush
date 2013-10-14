@@ -10,6 +10,7 @@
 #import <GameKit/GameKit.h>
 #import "cocos2d.h"
 #import "Ninja.h"
+#import "Silverbat.h"
 
 @interface Game : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
@@ -18,8 +19,6 @@
     CCAction *ninjaMove;
     Ninja *ninja;
 }
-
-@property (nonatomic, strong) Ninja *ninja;
 
 +(CCScene *) scene;
 

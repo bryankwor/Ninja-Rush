@@ -8,19 +8,6 @@
 
 #import "Silverbat.h"
 
-@interface Silverbat ()
-{
-    CGSize screenSize;
-}
-
-@property (nonatomic, strong) CCSprite *silverbat;
-@property (nonatomic, strong) CCAction *silverbatDown;
-@property (nonatomic, strong) CCAction *silverbatSide;
-@property (nonatomic, strong) CCAction *silverbatUp;
-@property (nonatomic, strong) CCAction *silverbatMove;
-
-@end
-
 @implementation Silverbat
 
 -(id) init

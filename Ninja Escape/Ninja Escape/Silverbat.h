@@ -10,5 +10,14 @@
 #import "cocos2d.h"
 
 @interface Silverbat : CCSprite
+{
+    CGSize screenSize;
+}
+
+@property (nonatomic, strong) CCSprite *silverbat;
+@property (nonatomic, strong) CCAction *silverbatDown;
+@property (nonatomic, strong) CCAction *silverbatSide;
+@property (nonatomic, strong) CCAction *silverbatUp;
+@property (nonatomic, strong) CCAction *silverbatMove;
 
 @end
