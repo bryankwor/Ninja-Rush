@@ -10,6 +10,11 @@
 
 @implementation Silverbat
 
+@synthesize silverbat;
+@synthesize silverbatDown;
+@synthesize silverbatSide;
+@synthesize silverbatUp;
+
 -(id) init
 {
     if ((self=[super init]))
@@ -78,6 +83,13 @@
     return self;
 }
 
+-(CGRect) getBoundingBox
+{
+    CGRect boundingBox = CGRectMake((self.silverbat.position.x-self.silverbat.contentSize.width/2), (self.silverbat.position.y-self.silverbat.contentSize.height/2), self.silverbat.contentSize.width, self.silverbat.contentSize.height);
+    
+    return boundingBox;
+}
+
 -(void) moveSilverbat:(ccTime)dt
 {
     // Initialize variables
@@ -142,9 +154,9 @@
         [self.silverbat runAction:self.silverbatSide];
     }
     
-    self.silverbatMove = [CCSequence actions:[CCMoveTo actionWithDuration:moveDuration position:newLocation], nil];
+    silverbatMove = [CCSequence actions:[CCMoveTo actionWithDuration:moveDuration position:newLocation], nil];
     
-    [self.silverbat runAction:self.silverbatMove];
+    [self.silverbat runAction:self->silverbatMove];
 }
 
 @end

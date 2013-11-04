@@ -11,6 +11,7 @@
 #import "cocos2d.h"
 #import "Ninja.h"
 #import "Silverbat.h"
+#import "Shuriken.h"
 
 @interface Game : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
@@ -18,6 +19,8 @@
     BOOL ninjaMoving;
     CCAction *ninjaMove;
     Ninja *ninja;
+    CCArray *bats;
+    CCArray *shurikens;
 }
 
 +(CCScene *) scene;

@@ -11,13 +11,20 @@
 
 @interface Silverbat : CCSprite
 {
-    CGSize screenSize;
+    @private
+        CGSize screenSize;
+        CCSprite *silverbat;
+        CCAction *silverbatDown;
+        CCAction *silverbatSide;
+        CCAction *silverbatUp;
+        CCAction *silverbatMove;
 }
 
 @property (nonatomic, strong) CCSprite *silverbat;
 @property (nonatomic, strong) CCAction *silverbatDown;
 @property (nonatomic, strong) CCAction *silverbatSide;
 @property (nonatomic, strong) CCAction *silverbatUp;
-@property (nonatomic, strong) CCAction *silverbatMove;
+
+-(CGRect) getBoundingBox;
 
 @end

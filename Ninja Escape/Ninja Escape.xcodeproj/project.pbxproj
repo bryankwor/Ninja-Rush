@@ -148,6 +148,9 @@
 		93346E1717FA6FC400F944CB /* silverbat.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1317FA6FC400F944CB /* silverbat.png */; };
 		93346E1A17FA7C5A00F944CB /* ninja.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1817FA7C5A00F944CB /* ninja.plist */; };
 		93346E1B17FA7C5A00F944CB /* ninja.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1917FA7C5A00F944CB /* ninja.png */; };
+		93BEFB6E1823202400BC601B /* shuriken.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93BEFB6C1823202400BC601B /* shuriken.plist */; };
+		93BEFB6F1823202400BC601B /* shuriken.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BEFB6D1823202400BC601B /* shuriken.png */; };
+		93BEFB72182320CD00BC601B /* Shuriken.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BEFB71182320CD00BC601B /* Shuriken.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -441,6 +444,10 @@
 		93346E1317FA6FC400F944CB /* silverbat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = silverbat.png; path = Resources/Sprites/silverbat.png; sourceTree = "<group>"; };
 		93346E1817FA7C5A00F944CB /* ninja.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ninja.plist; path = Resources/Sprites/ninja.plist; sourceTree = "<group>"; };
 		93346E1917FA7C5A00F944CB /* ninja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ninja.png; path = Resources/Sprites/ninja.png; sourceTree = "<group>"; };
+		93BEFB6C1823202400BC601B /* shuriken.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = shuriken.plist; path = Resources/Sprites/shuriken.plist; sourceTree = "<group>"; };
+		93BEFB6D1823202400BC601B /* shuriken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuriken.png; path = Resources/Sprites/shuriken.png; sourceTree = "<group>"; };
+		93BEFB70182320AB00BC601B /* Shuriken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shuriken.h; sourceTree = "<group>"; };
+		93BEFB71182320CD00BC601B /* Shuriken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shuriken.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +514,8 @@
 				93346DF017F7CBE000F944CB /* Game.m */,
 				931ABB5A1809FC8900CD42F0 /* Ninja.h */,
 				931ABB5B1809FC8900CD42F0 /* Ninja.m */,
+				93BEFB70182320AB00BC601B /* Shuriken.h */,
+				93BEFB71182320CD00BC601B /* Shuriken.m */,
 				931ABB5118061F3B00CD42F0 /* Silverbat.h */,
 				931ABB5218061F3B00CD42F0 /* Silverbat.m */,
 				93346DF217F7CBE000F944CB /* IntroLayer.h */,
@@ -904,6 +913,8 @@
 		93346DFA17F7CE9C00F944CB /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				93BEFB6C1823202400BC601B /* shuriken.plist */,
+				93BEFB6D1823202400BC601B /* shuriken.png */,
 				93346E1817FA7C5A00F944CB /* ninja.plist */,
 				93346E1917FA7C5A00F944CB /* ninja.png */,
 				93346E1217FA6FC400F944CB /* silverbat.plist */,
@@ -948,6 +959,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Bryan Worrell";
+				TargetAttributes = {
+					93346C4317F7CBDB00F944CB = {
+						DevelopmentTeam = 6UG892W23H;
+					};
+				};
 			};
 			buildConfigurationList = 93346C3F17F7CBDB00F944CB /* Build configuration list for PBXProject "Ninja Escape" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -971,6 +987,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93BEFB6F1823202400BC601B /* shuriken.png in Resources */,
 				93346C5E17F7CBDB00F944CB /* Default.png in Resources */,
 				93346C6017F7CBDB00F944CB /* Default@2x.png in Resources */,
 				93346C6217F7CBDB00F944CB /* Default-568h@2x.png in Resources */,
@@ -978,6 +995,7 @@
 				93346C6617F7CBDB00F944CB /* Icon-72.png in Resources */,
 				93346C6817F7CBDB00F944CB /* Icon-Small-50.png in Resources */,
 				93346C6A17F7CBDB00F944CB /* Icon-Small.png in Resources */,
+				93BEFB6E1823202400BC601B /* shuriken.plist in Resources */,
 				93346C6C17F7CBDB00F944CB /* Icon-Small@2x.png in Resources */,
 				93346C6E17F7CBDB00F944CB /* Icon.png in Resources */,
 				93346C7017F7CBDB00F944CB /* Icon@2x.png in Resources */,
@@ -1041,6 +1059,7 @@
 				93346CEF17F7CBDD00F944CB /* CCParticleBatchNode.m in Sources */,
 				93346CF217F7CBDD00F944CB /* CCParticleExamples.m in Sources */,
 				93346CF517F7CBDD00F944CB /* CCParticleSystem.m in Sources */,
+				93BEFB72182320CD00BC601B /* Shuriken.m in Sources */,
 				93346CF817F7CBDD00F944CB /* CCParticleSystemQuad.m in Sources */,
 				93346CFB17F7CBDD00F944CB /* CCPhysicsDebugNode.m in Sources */,
 				93346CFE17F7CBDD00F944CB /* CCPhysicsSprite.mm in Sources */,
@@ -1162,6 +1181,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1174,6 +1195,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1182,6 +1204,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ninja Escape/Prefix.pch";
@@ -1193,6 +1217,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

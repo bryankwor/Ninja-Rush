@@ -35,25 +35,34 @@
         self.touchEnabled = YES;
         screenSize = [[CCDirector sharedDirector] winSize];
         ninjaMoving = NO;
+        bats = [[CCArray alloc] init];
+        shurikens = [[CCArray alloc] init];
         
         // Set background
         CCSprite *background = [CCSprite spriteWithFile:@"field.jpeg"];
         background.position = ccp(screenSize.width/2, screenSize.height/2);
         [self addChild:background];
         
-        // Create ninja
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ninja.plist"];
-        CCSpriteBatchNode *ninjaSheet = [CCSpriteBatchNode batchNodeWithFile:@"ninja.png"];
-        [self addChild:ninjaSheet];
-        ninja = [[Ninja alloc] init];
-        ninja.position = ccp(screenSize.width/8, screenSize.height/2);
-        [ninjaSheet addChild:ninja];
-        
+        // Create enemies
         for (int i=0; i<20; ++i)
         {
             Silverbat *bat = [[Silverbat alloc] init];
+            [bat setTag:2];
+            [bats addObject:bat];
+            [self setContentSize:bat.contentSize];
             [self addChild:bat];
         }
+        
+        // Create ninja
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ninja.plist"];
+     //   CCSpriteBatchNode *ninjaSheet = [CCSpriteBatchNode batchNodeWithFile:@"ninja.png"];
+     //   [self addChild:ninjaSheet];
+        ninja = [[Ninja alloc] init];
+        [ninja setTag:1];
+        ninja.position = ccp(screenSize.width/12, screenSize.height/2);
+        [self addChild:ninja];
+        
+        [self schedule:@selector(update:) interval:.016];
     }
     
     return self;
@@ -73,9 +82,86 @@
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    CGPoint location = [self convertTouchToNodeSpace:touch];
-    [ninja moveToPosition:location];
+    bool moveNinja = true;
+    CGPoint location = [touch locationInView:[touch view]];
+    location = [[CCDirector sharedDirector] convertToGL:location];
     
+    for (Silverbat *bat in bats)
+    {
+        CGRect boundingBox = [bat getBoundingBox];
+        
+        if (CGRectContainsPoint(boundingBox, location))
+        {
+            if (bat.tag == 2)
+            {
+                Shuriken *shuriken = [[Shuriken alloc] init];
+                [shuriken setTag:3];
+                shuriken.position = ninja.position;
+                [shurikens addObject:shuriken];
+                [self addChild:shuriken];
+                [shuriken moveToPosition:location];
+                moveNinja = false;
+    
+            }
+        }
+    }
+    
+    if (moveNinja)
+        [ninja moveToPosition:location];
+}
+
+-(void) update:(ccTime)dt
+{
+    NSMutableArray *shurikensToDelete = [[NSMutableArray alloc] init];
+    CGRect ninjaBox = CGRectMake((ninja.position.x-ninja.contentSize.width/2), (ninja.position.y-ninja.contentSize.height/2), ninja.contentSize.width/2, ninja.contentSize.height/2);
+
+    
+    for (Silverbat *bat in bats)
+    {
+        CGRect batBox = [bat getBoundingBox];
+        batBox.size.height /= 4;
+        batBox.size.width /= 4;
+        
+        if (CGRectIntersectsRect(ninjaBox, batBox))
+            [self removeChild:ninja cleanup:YES];
+    }
+    
+    for (Shuriken *shuriken in shurikens)
+    {
+        NSMutableArray *batsToDelete = [[NSMutableArray alloc] init];
+    
+        for (Silverbat *bat in bats)
+        {
+            CGRect batBox = [bat getBoundingBox];
+            CGRect shurikenBox = [shuriken getBoundingBox];
+            shurikenBox.origin.x = shuriken.position.x-shurikenBox.size.width/2;
+            shurikenBox.origin.y = shuriken.position.y-shurikenBox.size.height/2;
+            if (CGRectIntersectsRect(shurikenBox, batBox))
+                [batsToDelete addObject:bat];
+        }
+        
+        for (Silverbat *bat in batsToDelete)
+        {
+            [bats removeObject:bat];
+            [self removeChild:bat cleanup:YES];
+        }
+        
+        if (batsToDelete.count > 0)
+            [shurikensToDelete addObject:shuriken];
+        
+        if (shuriken.isDoneMoving)
+            [shurikensToDelete addObject:shuriken];
+    
+        [batsToDelete release];
+    }
+    
+    for (Shuriken *shuriken in shurikensToDelete)
+    {
+        [shurikens removeObject:shuriken];
+        [self removeChild:shuriken cleanup:YES];
+    }
+    
+    [shurikensToDelete release];
 }
 
 // on "dealloc" you need to release all your retained objects

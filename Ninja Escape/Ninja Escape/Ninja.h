@@ -11,18 +11,20 @@
 
 @interface Ninja : CCSprite
 {
-    float ninjaVelocity;
-    BOOL ninjaMoving;
-    CCAction *ninjaMove;
-    CCAction *ninjaDown;
-    CCAction *ninjaSide;
-    CCAction *ninjaUp;
+    @private
+        float ninjaVelocity;
+        BOOL ninjaMoving;
+        CCAction *ninjaMove;
+        CCAction *ninjaDown;
+        CCAction *ninjaSide;
+        CCAction *ninjaUp;
 }
 
 @property (nonatomic, strong) CCAction *ninjaDown;
 @property (nonatomic, strong) CCAction *ninjaSide;
 @property (nonatomic, strong) CCAction *ninjaUp;
 
+//-(CGRect) getBoundingBox;
 -(void) stopActions;
 -(void) moveToPosition:(CGPoint)location;
 
