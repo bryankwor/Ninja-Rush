@@ -9,6 +9,7 @@
 #import "Game.h"
 #import "CCTouchDispatcher.h"
 #import "AppDelegate.h"
+#import "SimpleAudioEngine.h"
 
 @implementation Game
 
@@ -29,7 +30,7 @@
 
 -(id) init
 {
-    if ((self=[super init]))
+    if ((self = [super init]))
     {
         // Initialize
         self.touchEnabled = YES;
@@ -38,10 +39,14 @@
         bats = [[CCArray alloc] init];
         shurikens = [[CCArray alloc] init];
         
-        // Set background
+        // Set background and UI
         CCSprite *background = [CCSprite spriteWithFile:@"field.jpeg"];
         background.position = ccp(screenSize.width/2, screenSize.height/2);
         [self addChild:background];
+        UI = [[GameUI alloc] init];
+        [self addChild:UI];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"fieldTheme.mp3"];
+        [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:.50f];
         
         // Create enemies
         for (int i=0; i<20; ++i)
@@ -55,8 +60,6 @@
         
         // Create ninja
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ninja.plist"];
-     //   CCSpriteBatchNode *ninjaSheet = [CCSpriteBatchNode batchNodeWithFile:@"ninja.png"];
-     //   [self addChild:ninjaSheet];
         ninja = [[Ninja alloc] init];
         [ninja setTag:1];
         ninja.position = ccp(screenSize.width/12, screenSize.height/2);
@@ -100,8 +103,8 @@
                 [shurikens addObject:shuriken];
                 [self addChild:shuriken];
                 [shuriken moveToPosition:location];
+                [[SimpleAudioEngine sharedEngine] playEffect:@"shurikenThrow.wav"];
                 moveNinja = false;
-    
             }
         }
     }
@@ -114,7 +117,6 @@
 {
     NSMutableArray *shurikensToDelete = [[NSMutableArray alloc] init];
     CGRect ninjaBox = CGRectMake((ninja.position.x-ninja.contentSize.width/2), (ninja.position.y-ninja.contentSize.height/2), ninja.contentSize.width/2, ninja.contentSize.height/2);
-
     
     for (Silverbat *bat in bats)
     {
@@ -123,7 +125,15 @@
         batBox.size.width /= 4;
         
         if (CGRectIntersectsRect(ninjaBox, batBox))
-            [self removeChild:ninja cleanup:YES];
+        {
+            if ([UI updateLives:-1])
+            {
+                ninja.position = ccp(screenSize.width/12, screenSize.height/2);
+                [ninja stopActions];
+            }
+            else
+                continue;
+        }
     }
     
     for (Shuriken *shuriken in shurikens)
@@ -144,6 +154,7 @@
         {
             [bats removeObject:bat];
             [self removeChild:bat cleanup:YES];
+            [UI updateScore:100];
         }
         
         if (batsToDelete.count > 0)

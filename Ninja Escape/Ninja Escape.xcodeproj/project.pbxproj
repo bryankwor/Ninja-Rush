@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		931ABB5318061F3B00CD42F0 /* Silverbat.m in Sources */ = {isa = PBXBuildFile; fileRef = 931ABB5218061F3B00CD42F0 /* Silverbat.m */; };
 		931ABB5C1809FC8900CD42F0 /* Ninja.m in Sources */ = {isa = PBXBuildFile; fileRef = 931ABB5B1809FC8900CD42F0 /* Ninja.m */; };
+		9328E49D1831B09A00A52F82 /* GameUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9328E49C1831B09A00A52F82 /* GameUI.m */; };
+		9328E49F1831E5E900A52F82 /* shurikenThrow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9328E49E1831E5E900A52F82 /* shurikenThrow.wav */; };
+		9328E4A21831E61700A52F82 /* fieldTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9328E4A11831E61700A52F82 /* fieldTheme.mp3 */; };
 		93346C4817F7CBDB00F944CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C4717F7CBDB00F944CB /* QuartzCore.framework */; };
 		93346C4A17F7CBDB00F944CB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C4917F7CBDB00F944CB /* OpenGLES.framework */; };
 		93346C4C17F7CBDB00F944CB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C4B17F7CBDB00F944CB /* OpenAL.framework */; };
@@ -19,10 +22,6 @@
 		93346C5617F7CBDB00F944CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C5517F7CBDB00F944CB /* CoreGraphics.framework */; };
 		93346C5817F7CBDB00F944CB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C5717F7CBDB00F944CB /* CoreText.framework */; };
 		93346C5A17F7CBDB00F944CB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93346C5917F7CBDB00F944CB /* GameKit.framework */; };
-		93346C5E17F7CBDB00F944CB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346C5D17F7CBDB00F944CB /* Default.png */; };
-		93346C6017F7CBDB00F944CB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346C5F17F7CBDB00F944CB /* Default@2x.png */; };
-		93346C6217F7CBDB00F944CB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346C6117F7CBDB00F944CB /* Default-568h@2x.png */; };
-		93346C6417F7CBDB00F944CB /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346C6317F7CBDB00F944CB /* Default-Landscape~ipad.png */; };
 		93346C6617F7CBDB00F944CB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346C6517F7CBDB00F944CB /* Icon-72.png */; };
 		93346C6817F7CBDB00F944CB /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346C6717F7CBDB00F944CB /* Icon-Small-50.png */; };
 		93346C6A17F7CBDB00F944CB /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346C6917F7CBDB00F944CB /* Icon-Small.png */; };
@@ -142,12 +141,15 @@
 		93346DEB17F7CBE000F944CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DEA17F7CBE000F944CB /* main.m */; };
 		93346DEE17F7CBE000F944CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DED17F7CBE000F944CB /* AppDelegate.m */; };
 		93346DF117F7CBE000F944CB /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF017F7CBE000F944CB /* Game.m */; };
-		93346DF417F7CBE000F944CB /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF317F7CBE000F944CB /* IntroLayer.m */; };
+		93346DF417F7CBE000F944CB /* Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 93346DF317F7CBE000F944CB /* Launch.m */; };
 		93346E0F17FA64EE00F944CB /* field.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 93346E0E17FA64EE00F944CB /* field.jpeg */; };
 		93346E1617FA6FC400F944CB /* silverbat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1217FA6FC400F944CB /* silverbat.plist */; };
 		93346E1717FA6FC400F944CB /* silverbat.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1317FA6FC400F944CB /* silverbat.png */; };
 		93346E1A17FA7C5A00F944CB /* ninja.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1817FA7C5A00F944CB /* ninja.plist */; };
 		93346E1B17FA7C5A00F944CB /* ninja.png in Resources */ = {isa = PBXBuildFile; fileRef = 93346E1917FA7C5A00F944CB /* ninja.png */; };
+		93BB358B182751EA00BC4746 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BB3589182751EA00BC4746 /* Default.png */; };
+		93BB358C182751EA00BC4746 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BB358A182751EA00BC4746 /* Default@2x.png */; };
+		93BB35901827526700BC4746 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BB358F1827526700BC4746 /* Default-568h@2x.png */; };
 		93BEFB6E1823202400BC601B /* shuriken.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93BEFB6C1823202400BC601B /* shuriken.plist */; };
 		93BEFB6F1823202400BC601B /* shuriken.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BEFB6D1823202400BC601B /* shuriken.png */; };
 		93BEFB72182320CD00BC601B /* Shuriken.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BEFB71182320CD00BC601B /* Shuriken.m */; };
@@ -158,6 +160,10 @@
 		931ABB5218061F3B00CD42F0 /* Silverbat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Silverbat.m; sourceTree = "<group>"; };
 		931ABB5A1809FC8900CD42F0 /* Ninja.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ninja.h; sourceTree = "<group>"; };
 		931ABB5B1809FC8900CD42F0 /* Ninja.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ninja.m; sourceTree = "<group>"; };
+		9328E49B1831B09A00A52F82 /* GameUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameUI.h; sourceTree = "<group>"; };
+		9328E49C1831B09A00A52F82 /* GameUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameUI.m; sourceTree = "<group>"; };
+		9328E49E1831E5E900A52F82 /* shurikenThrow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = shurikenThrow.wav; path = Resources/Sounds/Sprites/shurikenThrow.wav; sourceTree = "<group>"; };
+		9328E4A11831E61700A52F82 /* fieldTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fieldTheme.mp3; path = Resources/Sounds/Themes/fieldTheme.mp3; sourceTree = "<group>"; };
 		93346C4417F7CBDB00F944CB /* Ninja Escape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Escape.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93346C4717F7CBDB00F944CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		93346C4917F7CBDB00F944CB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -169,10 +175,6 @@
 		93346C5517F7CBDB00F944CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		93346C5717F7CBDB00F944CB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		93346C5917F7CBDB00F944CB /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		93346C5D17F7CBDB00F944CB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
-		93346C5F17F7CBDB00F944CB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
-		93346C6117F7CBDB00F944CB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
-		93346C6317F7CBDB00F944CB /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		93346C6517F7CBDB00F944CB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
 		93346C6717F7CBDB00F944CB /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
 		93346C6917F7CBDB00F944CB /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
@@ -437,13 +439,16 @@
 		93346DED17F7CBE000F944CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		93346DEF17F7CBE000F944CB /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		93346DF017F7CBE000F944CB /* Game.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
-		93346DF217F7CBE000F944CB /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		93346DF317F7CBE000F944CB /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		93346DF217F7CBE000F944CB /* Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Launch.h; sourceTree = "<group>"; };
+		93346DF317F7CBE000F944CB /* Launch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Launch.m; sourceTree = "<group>"; };
 		93346E0E17FA64EE00F944CB /* field.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = field.jpeg; path = Resources/Backgrounds/field.jpeg; sourceTree = "<group>"; };
 		93346E1217FA6FC400F944CB /* silverbat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = silverbat.plist; path = Resources/Sprites/silverbat.plist; sourceTree = "<group>"; };
 		93346E1317FA6FC400F944CB /* silverbat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = silverbat.png; path = Resources/Sprites/silverbat.png; sourceTree = "<group>"; };
 		93346E1817FA7C5A00F944CB /* ninja.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ninja.plist; path = Resources/Sprites/ninja.plist; sourceTree = "<group>"; };
 		93346E1917FA7C5A00F944CB /* ninja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ninja.png; path = Resources/Sprites/ninja.png; sourceTree = "<group>"; };
+		93BB3589182751EA00BC4746 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Resources/Launch Images/Default.png"; sourceTree = "<group>"; };
+		93BB358A182751EA00BC4746 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Launch Images/Default@2x.png"; sourceTree = "<group>"; };
+		93BB358F1827526700BC4746 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Launch Images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		93BEFB6C1823202400BC601B /* shuriken.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = shuriken.plist; path = Resources/Sprites/shuriken.plist; sourceTree = "<group>"; };
 		93BEFB6D1823202400BC601B /* shuriken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuriken.png; path = Resources/Sprites/shuriken.png; sourceTree = "<group>"; };
 		93BEFB70182320AB00BC601B /* Shuriken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shuriken.h; sourceTree = "<group>"; };
@@ -471,6 +476,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9328E4A01831E5F600A52F82 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				9328E49E1831E5E900A52F82 /* shurikenThrow.wav */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		9328E4A31831E63000A52F82 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				9328E4A11831E61700A52F82 /* fieldTheme.mp3 */,
+			);
+			name = Themes;
+			sourceTree = "<group>";
+		};
 		93346C3B17F7CBDB00F944CB = {
 			isa = PBXGroup;
 			children = (
@@ -512,14 +533,16 @@
 				93346DED17F7CBE000F944CB /* AppDelegate.m */,
 				93346DEF17F7CBE000F944CB /* Game.h */,
 				93346DF017F7CBE000F944CB /* Game.m */,
+				9328E49B1831B09A00A52F82 /* GameUI.h */,
+				9328E49C1831B09A00A52F82 /* GameUI.m */,
 				931ABB5A1809FC8900CD42F0 /* Ninja.h */,
 				931ABB5B1809FC8900CD42F0 /* Ninja.m */,
 				93BEFB70182320AB00BC601B /* Shuriken.h */,
 				93BEFB71182320CD00BC601B /* Shuriken.m */,
 				931ABB5118061F3B00CD42F0 /* Silverbat.h */,
 				931ABB5218061F3B00CD42F0 /* Silverbat.m */,
-				93346DF217F7CBE000F944CB /* IntroLayer.h */,
-				93346DF317F7CBE000F944CB /* IntroLayer.m */,
+				93346DF217F7CBE000F944CB /* Launch.h */,
+				93346DF317F7CBE000F944CB /* Launch.m */,
 				93346C5C17F7CBDB00F944CB /* Resources */,
 				93346C7417F7CBDB00F944CB /* libs */,
 				93346DE817F7CBE000F944CB /* Supporting Files */,
@@ -530,18 +553,11 @@
 		93346C5C17F7CBDB00F944CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				93BB3588182750C200BC4746 /* Launch Images */,
+				93BB35911827589600BC4746 /* Icons */,
 				93346E0B17FA648A00F944CB /* Backgrounds */,
 				93346DFA17F7CE9C00F944CB /* Sprites */,
-				93346C5D17F7CBDB00F944CB /* Default.png */,
-				93346C5F17F7CBDB00F944CB /* Default@2x.png */,
-				93346C6117F7CBDB00F944CB /* Default-568h@2x.png */,
-				93346C6317F7CBDB00F944CB /* Default-Landscape~ipad.png */,
-				93346C6517F7CBDB00F944CB /* Icon-72.png */,
-				93346C6B17F7CBDB00F944CB /* Icon-Small@2x.png */,
-				93346C6717F7CBDB00F944CB /* Icon-Small-50.png */,
-				93346C6917F7CBDB00F944CB /* Icon-Small.png */,
-				93346C6D17F7CBDB00F944CB /* Icon.png */,
-				93346C6F17F7CBDB00F944CB /* Icon@2x.png */,
+				93BB3592182758C800BC4746 /* Sounds */,
 				93346C7117F7CBDB00F944CB /* Info.plist */,
 				93346C7217F7CBDB00F944CB /* iTunesArtwork */,
 			);
@@ -931,6 +947,38 @@
 			name = Backgrounds;
 			sourceTree = "<group>";
 		};
+		93BB3588182750C200BC4746 /* Launch Images */ = {
+			isa = PBXGroup;
+			children = (
+				93BB358F1827526700BC4746 /* Default-568h@2x.png */,
+				93BB3589182751EA00BC4746 /* Default.png */,
+				93BB358A182751EA00BC4746 /* Default@2x.png */,
+			);
+			name = "Launch Images";
+			sourceTree = "<group>";
+		};
+		93BB35911827589600BC4746 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				93346C6517F7CBDB00F944CB /* Icon-72.png */,
+				93346C6B17F7CBDB00F944CB /* Icon-Small@2x.png */,
+				93346C6717F7CBDB00F944CB /* Icon-Small-50.png */,
+				93346C6917F7CBDB00F944CB /* Icon-Small.png */,
+				93346C6D17F7CBDB00F944CB /* Icon.png */,
+				93346C6F17F7CBDB00F944CB /* Icon@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		93BB3592182758C800BC4746 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9328E4A31831E63000A52F82 /* Themes */,
+				9328E4A01831E5F600A52F82 /* Sprites */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -987,19 +1035,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9328E4A21831E61700A52F82 /* fieldTheme.mp3 in Resources */,
+				9328E49F1831E5E900A52F82 /* shurikenThrow.wav in Resources */,
 				93BEFB6F1823202400BC601B /* shuriken.png in Resources */,
-				93346C5E17F7CBDB00F944CB /* Default.png in Resources */,
-				93346C6017F7CBDB00F944CB /* Default@2x.png in Resources */,
-				93346C6217F7CBDB00F944CB /* Default-568h@2x.png in Resources */,
-				93346C6417F7CBDB00F944CB /* Default-Landscape~ipad.png in Resources */,
 				93346C6617F7CBDB00F944CB /* Icon-72.png in Resources */,
 				93346C6817F7CBDB00F944CB /* Icon-Small-50.png in Resources */,
+				93BB358B182751EA00BC4746 /* Default.png in Resources */,
 				93346C6A17F7CBDB00F944CB /* Icon-Small.png in Resources */,
 				93BEFB6E1823202400BC601B /* shuriken.plist in Resources */,
 				93346C6C17F7CBDB00F944CB /* Icon-Small@2x.png in Resources */,
 				93346C6E17F7CBDB00F944CB /* Icon.png in Resources */,
 				93346C7017F7CBDB00F944CB /* Icon@2x.png in Resources */,
+				93BB358C182751EA00BC4746 /* Default@2x.png in Resources */,
 				93346C7317F7CBDB00F944CB /* iTunesArtwork in Resources */,
+				93BB35901827526700BC4746 /* Default-568h@2x.png in Resources */,
 				93346DCC17F7CBE000F944CB /* ChangeLog in Resources */,
 				93346E0F17FA64EE00F944CB /* field.jpeg in Resources */,
 				93346E1617FA6FC400F944CB /* silverbat.plist in Resources */,
@@ -1083,6 +1132,7 @@
 				93346D4417F7CBDE00F944CB /* CCTMXTiledMap.m in Sources */,
 				93346D4717F7CBDE00F944CB /* CCTMXXMLParser.m in Sources */,
 				93346D4A17F7CBDE00F944CB /* CCTransition.m in Sources */,
+				9328E49D1831B09A00A52F82 /* GameUI.m in Sources */,
 				93346D4D17F7CBDE00F944CB /* CCTransitionPageTurn.m in Sources */,
 				93346D5017F7CBDE00F944CB /* CCTransitionProgress.m in Sources */,
 				93346D5417F7CBDE00F944CB /* cocos2d.m in Sources */,
@@ -1130,7 +1180,7 @@
 				93346DEB17F7CBE000F944CB /* main.m in Sources */,
 				93346DEE17F7CBE000F944CB /* AppDelegate.m in Sources */,
 				93346DF117F7CBE000F944CB /* Game.m in Sources */,
-				93346DF417F7CBE000F944CB /* IntroLayer.m in Sources */,
+				93346DF417F7CBE000F944CB /* Launch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@
 
 -(id) init
 {
-    if ((self=[super initWithSpriteFrameName:@"ninja01.png"]))
+    if ((self = [super initWithSpriteFrameName:@"ninja01.png"]))
     {
         // Initalize
         CGSize screenSize = [[CCDirector sharedDirector] winSize];

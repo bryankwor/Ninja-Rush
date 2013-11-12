@@ -8,7 +8,6 @@
 
 #import "Shuriken.h"
 
-
 @implementation Shuriken
 
 @synthesize isDoneMoving;
@@ -16,7 +15,7 @@
 
 -(id) init
 {
-    if ((self=[super init]))
+    if ((self = [super init]))
     {
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         shurikenVelocity = screenSize.width / 4.0;

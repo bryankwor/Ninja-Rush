@@ -9,6 +9,7 @@
 
 #import <GameKit/GameKit.h>
 #import "cocos2d.h"
+#import "GameUI.h"
 #import "Ninja.h"
 #import "Silverbat.h"
 #import "Shuriken.h"
@@ -17,6 +18,7 @@
 {
     CGSize screenSize;
     BOOL ninjaMoving;
+    GameUI *UI;
     CCAction *ninjaMove;
     Ninja *ninja;
     CCArray *bats;
