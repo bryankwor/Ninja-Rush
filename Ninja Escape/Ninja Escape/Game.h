@@ -1,5 +1,5 @@
 //
-//  HelloWorldLayer.h
+//  Game.h
 //  Ninja Escape
 //
 //  Created by Bryan Worrell on 9/28/13.
@@ -9,7 +9,7 @@
 
 #import <GameKit/GameKit.h>
 #import "cocos2d.h"
-#import "GameUI.h"
+#import "GameData.h"
 #import "Ninja.h"
 #import "Silverbat.h"
 #import "Shuriken.h"
@@ -18,11 +18,14 @@
 {
     CGSize screenSize;
     BOOL ninjaMoving;
-    GameUI *UI;
+
     CCAction *ninjaMove;
     Ninja *ninja;
     CCArray *bats;
     CCArray *shurikens;
+    CCArray *items;
+    CCSprite *tryAgain;
+    GameData *UI;
 }
 
 +(CCScene *) scene;

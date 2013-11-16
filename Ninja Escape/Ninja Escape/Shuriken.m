@@ -18,6 +18,7 @@
     if ((self = [super init]))
     {
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
+
         shurikenVelocity = screenSize.width / 4.0;
         shurikenMove = nil;
         self.isDoneMoving = FALSE;

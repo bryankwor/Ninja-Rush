@@ -1,5 +1,5 @@
 //
-//  IntroLayer.h
+//  Launch.h
 //  Ninja Escape
 //
 //  Created by Bryan Worrell on 9/28/13.

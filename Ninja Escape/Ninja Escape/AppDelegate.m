@@ -56,7 +56,6 @@
 @implementation AppController
 
 @synthesize window=window_, navController=navController_, director=director_;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// Create the main window
@@ -135,7 +134,7 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
-	
+    
 	return YES;
 }
 
