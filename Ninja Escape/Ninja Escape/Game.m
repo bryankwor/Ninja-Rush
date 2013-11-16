@@ -6,12 +6,11 @@
 // Copyright Bryan Worrell 2013. All rights reserved.
 //
 
-#import "Game.h"
 #import "CCTouchDispatcher.h"
 #import "SimpleAudioEngine.h"
-#import "GameOver.h"
 #import "AppDelegate.h"
-#import "GameData.h"
+#import "Game.h"
+#import "GameOver.h"
 
 @implementation Game
 
@@ -32,7 +31,7 @@
         screenSize = [[CCDirector sharedDirector] winSize];
         self.touchEnabled = YES;
         ninjaMoving = NO;
-        bats = [[CCArray alloc] init];
+        enemies = [[CCArray alloc] init];
         shurikens = [[CCArray alloc] init];
         items  = [[CCArray alloc] init];
         
@@ -40,6 +39,7 @@
         CCSprite *background = [CCSprite spriteWithFile:@"field.jpeg"];
         background.position = ccp(screenSize.width/2, screenSize.height/2);
         [self addChild:background];
+        
         UI = [[GameData alloc] init];
         [self loadUI];
         [self addChild:UI];
@@ -55,16 +55,13 @@
         for (int i=0; i<20; ++i)
         {
             Silverbat *bat = [[Silverbat alloc] init];
-            [bat setTag:2];
-            [bats addObject:bat];
-            [self setContentSize:bat.contentSize];
+            [enemies addObject:bat];
             [self addChild:bat];
         }
         
         // Create ninja
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ninja.plist"];
         ninja = [[Ninja alloc] init];
-        [ninja setTag:1];
         ninja.position = ccp(screenSize.width/12, screenSize.height/2);
         [self addChild:ninja];
         
@@ -90,35 +87,43 @@
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    // Initialize local variables
+    // Initialize
     bool moveNinja = true;
     CGPoint location = [touch locationInView:[touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
     
-    // Shoot shuriken if available at any bats touched
+    // Shoot shuriken if available at any enemies touched
     if (UI.shurikens != 0)
     {
-        for (Silverbat *bat in bats)
+        for (CCSprite *enemy in enemies)
         {
-            CGRect boundingBox = [bat getBoundingBox];
+            CGRect boundingBox = [enemy getBoundingBox];
             
             if (CGRectContainsPoint(boundingBox, location))
             {
-                if (bat.tag == 2)
-                {
-                    Shuriken *shuriken = [[Shuriken alloc] init];
-                    [shuriken setTag:3];
-                    shuriken.position = ninja.position;
-                    [shurikens addObject:shuriken];
-                    [self addChild:shuriken];
-                    [shuriken moveToPosition:location];
-                    [[SimpleAudioEngine sharedEngine] playEffect:@"shurikenThrow.wav"];
-                    [UI updateShurikens:-1];
-                    moveNinja = false;
-                }
+                // Ninja shouldn't move if shooting
+                moveNinja = false;
+                [[SimpleAudioEngine sharedEngine] playEffect:@"shurikenThrow.wav"];
+                
+                // Create shuriken starting at player and shoot towards enemy
+                Shuriken *shuriken = [[Shuriken alloc] init];
+                shuriken.position = ninja.position;
+                [shuriken moveToPosition:location];
+                
+                // Add to scene
+                [shurikens addObject:shuriken];
+                [self addChild:shuriken];
+                
+                // Update number of available shurikens
+                [UI updateShurikens:-1];
             }
         }
-
+    }
+    
+    // Use defensive item if ninja is touched
+    if (UI.smokeBombs != 0)
+    {
+        [UI updateSmokeBombs:-1];
     }
     
     // Otherwise just move ninja
@@ -128,15 +133,17 @@
 
 -(void) update:(ccTime)dt
 {
-    // Initialize local variables
+    // Initialize
     CGRect ninjaBox = CGRectMake((ninja.position.x-ninja.contentSize.width/2), (ninja.position.y-ninja.contentSize.height/2), ninja.contentSize.width/2, ninja.contentSize.height/2);
     float gameTime = [UI getTime];
 
+    // Check if level complete
+    if ([enemies count] == 0)
+        [self levelComplete];
+    
     // Check if out of time
     if (gameTime < 0)
-    {
         [self timeOut];
-    }
     
     // Check if ninja picked up any items
     for (CCSprite *item in items)
@@ -147,28 +154,34 @@
         
         if (CGRectIntersectsRect(ninjaBox, itemBox))
         {
-            // Shurikens tagged as 3
-            if (item.tag == 3)
+            // Shurikens tagged as 1
+            if (item.tag == 1)
             {
                 [UI updateShurikens:5];
                 [items removeObject:item];
                 [self removeChild:item cleanup:YES];
             }
 
-            else
+            // Smoke bombs tagged as 2
+            if (item.tag == 2)
+            {
                 [UI updateSmokeBombs:1];
+                [items removeObject:item];
+                [self removeChild:item cleanup:YES];
+
+            }
         }
 
     }
     
     // Check if ninja is hit by any enemies
-    for (Silverbat *bat in bats)
+    for (CCSprite *enemy in enemies)
     {
-        CGRect batBox = [bat getBoundingBox];
-        batBox.size.height /= 4;
-        batBox.size.width /= 4;
+        CGRect enemyBox = [enemy getBoundingBox];
+        enemyBox.size.height /= 4;
+        enemyBox.size.width /= 4;
         
-        if (CGRectIntersectsRect(ninjaBox, batBox))
+        if (CGRectIntersectsRect(ninjaBox, enemyBox))
         {
             // If lives > 0, reset ninja
             if ([UI updateLives:-1])
@@ -190,32 +203,32 @@
     NSMutableArray *shurikensToDelete = [[NSMutableArray alloc] init];
     for (Shuriken *shuriken in shurikens)
     {
-        NSMutableArray *batsToDelete = [[NSMutableArray alloc] init];
+        NSMutableArray *enemiesToDelete = [[NSMutableArray alloc] init];
     
-        for (Silverbat *bat in bats)
+        for (CCSprite *enemy in enemies)
         {
-            CGRect batBox = [bat getBoundingBox];
+            CGRect enemyBox = [enemy getBoundingBox];
             CGRect shurikenBox = [shuriken getBoundingBox];
             shurikenBox.origin.x = shuriken.position.x-shurikenBox.size.width/2;
             shurikenBox.origin.y = shuriken.position.y-shurikenBox.size.height/2;
-            if (CGRectIntersectsRect(shurikenBox, batBox))
-                [batsToDelete addObject:bat];
+            if (CGRectIntersectsRect(shurikenBox, enemyBox))
+                [enemiesToDelete addObject:enemy];
         }
         
-        for (Silverbat *bat in batsToDelete)
+        for (CCSprite *enemy in enemiesToDelete)
         {
-            [bats removeObject:bat];
-            [self removeChild:bat cleanup:YES];
+            [enemies removeObject:enemy];
+            [self removeChild:enemy cleanup:YES];
             [UI updateScore:100];
         }
         
-        if (batsToDelete.count > 0)
+        if (enemiesToDelete.count > 0)
             [shurikensToDelete addObject:shuriken];
         
         if (shuriken.isDoneMoving)
             [shurikensToDelete addObject:shuriken];
     
-        [batsToDelete release];
+        [enemiesToDelete release];
     }
     
     for (Shuriken *shuriken in shurikensToDelete)
@@ -225,6 +238,32 @@
     }
     
     [shurikensToDelete release];
+}
+
+-(void) spawnItem:(ccTime)dt
+{
+    CGPoint randSpawnPoint;
+    randSpawnPoint.y = arc4random() % (int)screenSize.height;
+    randSpawnPoint.x = arc4random() % (int)screenSize.width;
+    
+    if ([items count] < 2)
+    {
+        int select = arc4random() % 3;
+        
+        if (select == 1)
+        {
+            Shuriken *shuriken = [[Shuriken alloc] init];
+            [shuriken setTag:1];
+            shuriken.position = randSpawnPoint;
+            [items addObject:shuriken];
+            [self addChild:shuriken];
+        }
+    }
+}
+
+-(void) levelComplete
+{
+    
 }
 
 -(void) timeOut
@@ -265,26 +304,6 @@
     data.smokeBombs = UI.smokeBombs;
 }
 
--(void) spawnItem:(ccTime)dt
-{
-    CGPoint randSpawnPoint;
-    randSpawnPoint.y = arc4random() % (int)screenSize.height;
-    randSpawnPoint.x = arc4random() % (int)screenSize.width;
-    
-    if ([items count] < 2)
-    {
-        int select = arc4random() % 3;
-        
-        if (select == 1)
-        {
-            Shuriken *shuriken = [[Shuriken alloc] init];
-            [shuriken setTag:3];
-            shuriken.position = randSpawnPoint;
-            [items addObject:shuriken];
-            [self addChild:shuriken];
-        }
-    }
-}
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc

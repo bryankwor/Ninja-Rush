@@ -17,6 +17,8 @@
         int lives;
         int shurikens;
         int smokeBombs;
+    
+    @private
         CCLabelTTF *scoreLabel;
         CCLabelTTF *timeLabel;
         CCLabelTTF *livesLabel;

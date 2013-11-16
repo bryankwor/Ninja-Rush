@@ -14,16 +14,10 @@
 
 +(CCScene *) scene
 {
-    // 'scene' is an autorelease object.
     CCScene *scene = [CCScene node];
-    
-    // 'layer' is an autorelease object.
     GameOver *layer = [GameOver node];
-    
-    // add layer as a child to scene
     [scene addChild: layer];
     
-    // return the scene
     return scene;
 }
 
@@ -31,13 +25,17 @@
 {
     if ((self = [super init]))
     {
+        // Initialize
         self.touchEnabled = YES;
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
+        // Set background image
         CCSprite *background = [CCSprite spriteWithFile:@"introScreen.png"];
         background.position = ccp(screenSize.width/2, screenSize.height/2);
         [self addChild:background];
         background.rotation = 90;
+        
+        // Play game over theme
         
     }
     

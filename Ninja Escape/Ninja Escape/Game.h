@@ -17,14 +17,15 @@
 @interface Game : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
     CGSize screenSize;
+
+    Ninja *ninja;
+    CCAction *ninjaMove;
     BOOL ninjaMoving;
 
-    CCAction *ninjaMove;
-    Ninja *ninja;
-    CCArray *bats;
+    CCArray *enemies;
     CCArray *shurikens;
     CCArray *items;
-    CCSprite *tryAgain;
+    
     GameData *UI;
 }
 
