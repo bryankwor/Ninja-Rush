@@ -60,7 +60,6 @@
     return boundingBox;
 }
 
-
 -(void) moveToPosition:(CGPoint)location
 {
     // Calculate move duration based on screen size

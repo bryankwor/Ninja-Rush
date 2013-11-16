@@ -102,14 +102,6 @@
     [self runAction:ninjaMove];
     ninjaMoving = YES;
 }
-/*
--(CGRect) getBoundingBox
-{
-    CGRect boundingBox = CGRectMake((self.ninja.position.x-self.ninja.contentSize.width/2), (self.ninja.position.y-self.ninja.contentSize.height/2), self.ninja.contentSize.width, self.ninja.contentSize.height);
-    
-    return boundingBox;
-}
-*/
 
 -(void) stopActions
 {

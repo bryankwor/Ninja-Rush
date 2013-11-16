@@ -24,7 +24,6 @@
 @property (nonatomic, strong) CCAction *ninjaSide;
 @property (nonatomic, strong) CCAction *ninjaUp;
 
-//-(CGRect) getBoundingBox;
 -(void) stopActions;
 -(void) moveToPosition:(CGPoint)location;
 
