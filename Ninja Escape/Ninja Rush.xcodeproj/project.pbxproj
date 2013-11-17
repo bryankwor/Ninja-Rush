@@ -157,6 +157,13 @@
 		93BEFB6E1823202400BC601B /* shuriken.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93BEFB6C1823202400BC601B /* shuriken.plist */; };
 		93BEFB6F1823202400BC601B /* shuriken.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BEFB6D1823202400BC601B /* shuriken.png */; };
 		93BEFB72182320CD00BC601B /* Shuriken.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BEFB71182320CD00BC601B /* Shuriken.m */; };
+		93EEEAEE1838F77C001FB86C /* shurikenItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAEC1838F77C001FB86C /* shurikenItem.plist */; };
+		93EEEAEF1838F77C001FB86C /* shurikenItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAED1838F77C001FB86C /* shurikenItem.png */; };
+		93EEEAF1183910ED001FB86C /* itemGet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAF0183910ED001FB86C /* itemGet.mp3 */; };
+		93EEEAF418391B40001FB86C /* smokeBomb.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAF218391B40001FB86C /* smokeBomb.plist */; };
+		93EEEAF518391B40001FB86C /* smokeBomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAF318391B40001FB86C /* smokeBomb.png */; };
+		93EEEAF818391C7B001FB86C /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEEAF718391C7B001FB86C /* Item.m */; };
+		93EEEAFA18392630001FB86C /* Cloak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAF918392630001FB86C /* Cloak.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -463,6 +470,14 @@
 		93BEFB6D1823202400BC601B /* shuriken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuriken.png; path = Resources/Sprites/shuriken.png; sourceTree = "<group>"; };
 		93BEFB70182320AB00BC601B /* Shuriken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shuriken.h; sourceTree = "<group>"; };
 		93BEFB71182320CD00BC601B /* Shuriken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shuriken.m; sourceTree = "<group>"; };
+		93EEEAEC1838F77C001FB86C /* shurikenItem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = shurikenItem.plist; path = Resources/Sprites/shurikenItem.plist; sourceTree = "<group>"; };
+		93EEEAED1838F77C001FB86C /* shurikenItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shurikenItem.png; path = Resources/Sprites/shurikenItem.png; sourceTree = "<group>"; };
+		93EEEAF0183910ED001FB86C /* itemGet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = itemGet.mp3; path = Resources/Sounds/Sprites/itemGet.mp3; sourceTree = "<group>"; };
+		93EEEAF218391B40001FB86C /* smokeBomb.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = smokeBomb.plist; path = Resources/Sprites/smokeBomb.plist; sourceTree = "<group>"; };
+		93EEEAF318391B40001FB86C /* smokeBomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smokeBomb.png; path = Resources/Sprites/smokeBomb.png; sourceTree = "<group>"; };
+		93EEEAF618391C7B001FB86C /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		93EEEAF718391C7B001FB86C /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		93EEEAF918392630001FB86C /* Cloak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Cloak.wav; path = Resources/Sounds/Sprites/Cloak.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,6 +504,8 @@
 		9328E4A01831E5F600A52F82 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				93EEEAF918392630001FB86C /* Cloak.wav */,
+				93EEEAF0183910ED001FB86C /* itemGet.mp3 */,
 				9328E49E1831E5E900A52F82 /* shurikenThrow.wav */,
 			);
 			name = Sprites;
@@ -510,6 +527,8 @@
 				93BEFB70182320AB00BC601B /* Shuriken.h */,
 				93BEFB71182320CD00BC601B /* Shuriken.m */,
 				931ABB5118061F3B00CD42F0 /* Silverbat.h */,
+				93EEEAF618391C7B001FB86C /* Item.h */,
+				93EEEAF718391C7B001FB86C /* Item.m */,
 				931ABB5218061F3B00CD42F0 /* Silverbat.m */,
 			);
 			name = Sprites;
@@ -984,6 +1003,10 @@
 		93346DFA17F7CE9C00F944CB /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				93EEEAF218391B40001FB86C /* smokeBomb.plist */,
+				93EEEAF318391B40001FB86C /* smokeBomb.png */,
+				93EEEAEC1838F77C001FB86C /* shurikenItem.plist */,
+				93EEEAED1838F77C001FB86C /* shurikenItem.png */,
 				93BEFB6C1823202400BC601B /* shuriken.plist */,
 				93BEFB6D1823202400BC601B /* shuriken.png */,
 				93346E1817FA7C5A00F944CB /* ninja.plist */,
@@ -1094,13 +1117,18 @@
 				9328E4AC183208E800A52F82 /* introScreen.png in Resources */,
 				9328E49F1831E5E900A52F82 /* shurikenThrow.wav in Resources */,
 				93BEFB6F1823202400BC601B /* shuriken.png in Resources */,
+				93EEEAEF1838F77C001FB86C /* shurikenItem.png in Resources */,
+				93EEEAEE1838F77C001FB86C /* shurikenItem.plist in Resources */,
+				93EEEAF1183910ED001FB86C /* itemGet.mp3 in Resources */,
 				93346C6617F7CBDB00F944CB /* Icon-72.png in Resources */,
 				93346C6817F7CBDB00F944CB /* Icon-Small-50.png in Resources */,
 				93BB358B182751EA00BC4746 /* Default.png in Resources */,
 				93346C6A17F7CBDB00F944CB /* Icon-Small.png in Resources */,
 				93BEFB6E1823202400BC601B /* shuriken.plist in Resources */,
+				93EEEAFA18392630001FB86C /* Cloak.wav in Resources */,
 				93346C6C17F7CBDB00F944CB /* Icon-Small@2x.png in Resources */,
 				93346C6E17F7CBDB00F944CB /* Icon.png in Resources */,
+				93EEEAF518391B40001FB86C /* smokeBomb.png in Resources */,
 				93346C7017F7CBDB00F944CB /* Icon@2x.png in Resources */,
 				93BB358C182751EA00BC4746 /* Default@2x.png in Resources */,
 				9328E4AF18320BF600A52F82 /* playGame.png in Resources */,
@@ -1110,6 +1138,7 @@
 				93346DCC17F7CBE000F944CB /* ChangeLog in Resources */,
 				93346E0F17FA64EE00F944CB /* field.jpeg in Resources */,
 				93346E1617FA6FC400F944CB /* silverbat.plist in Resources */,
+				93EEEAF418391B40001FB86C /* smokeBomb.plist in Resources */,
 				93346E1717FA6FC400F944CB /* silverbat.png in Resources */,
 				93346E1A17FA7C5A00F944CB /* ninja.plist in Resources */,
 				93346E1B17FA7C5A00F944CB /* ninja.png in Resources */,
@@ -1208,6 +1237,7 @@
 				93346D7917F7CBDF00F944CB /* base64.c in Sources */,
 				93346D7D17F7CBDF00F944CB /* CCArray.m in Sources */,
 				93346D8017F7CBDF00F944CB /* ccCArray.m in Sources */,
+				93EEEAF818391C7B001FB86C /* Item.m in Sources */,
 				93346D8317F7CBDF00F944CB /* CCFileUtils.m in Sources */,
 				93346D8617F7CBDF00F944CB /* CCProfiling.m in Sources */,
 				93346D8817F7CBDF00F944CB /* ccUtils.c in Sources */,

@@ -13,14 +13,17 @@
 #import "Ninja.h"
 #import "Silverbat.h"
 #import "Shuriken.h"
+#import "Item.h"
 
 @interface Game : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
     CGSize screenSize;
+    int timeInvincible;
 
     Ninja *ninja;
     CCAction *ninjaMove;
     BOOL ninjaMoving;
+    BOOL ninjaInvulnerable;
 
     CCArray *enemies;
     CCArray *shurikens;

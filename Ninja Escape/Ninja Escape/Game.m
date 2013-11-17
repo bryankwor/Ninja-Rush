@@ -28,9 +28,11 @@
     if ((self = [super init]))
     {
         // Initialize
+        timeInvincible = 0;
         screenSize = [[CCDirector sharedDirector] winSize];
         self.touchEnabled = YES;
         ninjaMoving = NO;
+        ninjaInvulnerable = FALSE;
         enemies = [[CCArray alloc] init];
         shurikens = [[CCArray alloc] init];
         items  = [[CCArray alloc] init];
@@ -68,6 +70,7 @@
         // Set up callbacks
         [self schedule:@selector(update:) interval:.016];
         [self schedule:@selector(spawnItem:) interval:5];
+        [self schedule:@selector(invincibility:) interval:1];
     }
     
     return self;
@@ -88,6 +91,7 @@
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
     // Initialize
+    CGRect ninjaBox = CGRectMake((ninja.position.x-ninja.contentSize.width/2), (ninja.position.y-ninja.contentSize.height/2), ninja.contentSize.width/2, ninja.contentSize.height/2);
     bool moveNinja = true;
     CGPoint location = [touch locationInView:[touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
@@ -123,7 +127,21 @@
     // Use defensive item if ninja is touched
     if (UI.smokeBombs != 0)
     {
-        [UI updateSmokeBombs:-1];
+        if (CGRectContainsPoint(ninjaBox, location))
+        {
+            // Ninja shouldn't move if using item
+            moveNinja = false;
+            [[SimpleAudioEngine sharedEngine] playEffect:@"Cloak.wav"];
+            
+            // Execute smoke bomb animation
+            
+            // Set invincibility
+            timeInvincible = 5;
+            ninjaInvulnerable = TRUE;
+            
+            // Update number of available smoke bombs
+            [UI updateSmokeBombs:-1];
+        }
     }
     
     // Otherwise just move ninja
@@ -157,6 +175,7 @@
             // Shurikens tagged as 1
             if (item.tag == 1)
             {
+                [[SimpleAudioEngine sharedEngine] playEffect:@"itemGet.mp3"];
                 [UI updateShurikens:5];
                 [items removeObject:item];
                 [self removeChild:item cleanup:YES];
@@ -165,6 +184,7 @@
             // Smoke bombs tagged as 2
             if (item.tag == 2)
             {
+                [[SimpleAudioEngine sharedEngine] playEffect:@"itemGet.mp3"];
                 [UI updateSmokeBombs:1];
                 [items removeObject:item];
                 [self removeChild:item cleanup:YES];
@@ -175,28 +195,32 @@
     }
     
     // Check if ninja is hit by any enemies
-    for (CCSprite *enemy in enemies)
+    if (!ninjaInvulnerable)
     {
-        CGRect enemyBox = [enemy getBoundingBox];
-        enemyBox.size.height /= 4;
-        enemyBox.size.width /= 4;
-        
-        if (CGRectIntersectsRect(ninjaBox, enemyBox))
+        for (CCSprite *enemy in enemies)
         {
-            // If lives > 0, reset ninja
-            if ([UI updateLives:-1])
+            CGRect enemyBox = [enemy getBoundingBox];
+            enemyBox.size.height /= 4;
+            enemyBox.size.width /= 4;
+            
+            if (CGRectIntersectsRect(ninjaBox, enemyBox))
             {
-                ninja.position = ccp(screenSize.width/12, screenSize.height/2);
-                [ninja stopActions];
-            }
-            // Otherwise game over
-            else
-            {
-                [ninja stopActions];
-                [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-                [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameOver scene]]];
+                // If lives > 0, reset ninja
+                if ([UI updateLives:-1])
+                {
+                    ninja.position = ccp(screenSize.width/12, screenSize.height/2);
+                    [ninja stopActions];
+                }
+                // Otherwise game over
+                else
+                {
+                    [ninja stopActions];
+                    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+                    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameOver scene]]];
+                }
             }
         }
+
     }
     
     // Check collisions between all shurikens on screen with any enemies
@@ -245,6 +269,8 @@
     CGPoint randSpawnPoint;
     randSpawnPoint.y = arc4random() % (int)screenSize.height;
     randSpawnPoint.x = arc4random() % (int)screenSize.width;
+    randSpawnPoint.y /= 2;
+    randSpawnPoint.x /= 2;
     
     if ([items count] < 2)
     {
@@ -252,12 +278,32 @@
         
         if (select == 1)
         {
-            Shuriken *shuriken = [[Shuriken alloc] init];
+            Item *shuriken = [[Item alloc] initWithFile:@"shurikenItem"];
             [shuriken setTag:1];
             shuriken.position = randSpawnPoint;
             [items addObject:shuriken];
             [self addChild:shuriken];
         }
+        
+        if (select == 2)
+        {
+            Item *smokeBomb = [[Item alloc] initWithFile:@"smokeBomb"];
+            [smokeBomb setTag:2];
+            smokeBomb.position = randSpawnPoint;
+            [items addObject:smokeBomb];
+            [self addChild:smokeBomb];
+        }
+    }
+}
+
+-(void) invincibility:(ccTime)dt
+{
+    if (ninjaInvulnerable)
+    {
+        --timeInvincible;
+
+        if (timeInvincible == 0)
+            ninjaInvulnerable = FALSE;
     }
 }
 
