@@ -164,6 +164,18 @@
 		93EEEAF518391B40001FB86C /* smokeBomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAF318391B40001FB86C /* smokeBomb.png */; };
 		93EEEAF818391C7B001FB86C /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEEAF718391C7B001FB86C /* Item.m */; };
 		93EEEAFA18392630001FB86C /* Cloak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAF918392630001FB86C /* Cloak.wav */; };
+		93EEEB03183C5C56001FB86C /* demon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAFB183C5C56001FB86C /* demon.plist */; };
+		93EEEB04183C5C56001FB86C /* demon.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAFC183C5C56001FB86C /* demon.png */; };
+		93EEEB05183C5C56001FB86C /* dragon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAFD183C5C56001FB86C /* dragon.plist */; };
+		93EEEB06183C5C56001FB86C /* dragon.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAFE183C5C56001FB86C /* dragon.png */; };
+		93EEEB07183C5C56001FB86C /* goldbat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEAFF183C5C56001FB86C /* goldbat.plist */; };
+		93EEEB08183C5C56001FB86C /* goldbat.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB00183C5C56001FB86C /* goldbat.png */; };
+		93EEEB09183C5C56001FB86C /* knight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB01183C5C56001FB86C /* knight.plist */; };
+		93EEEB0A183C5C56001FB86C /* knight.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB02183C5C56001FB86C /* knight.png */; };
+		93EEEB0D183C5CA6001FB86C /* Knight.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEEB0C183C5CA6001FB86C /* Knight.m */; };
+		93EEEB10183C5CB5001FB86C /* Dragon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEEB0F183C5CB5001FB86C /* Dragon.m */; };
+		93EEEB13183C5CCC001FB86C /* Demon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEEB12183C5CCC001FB86C /* Demon.m */; };
+		93EEEB16183C5CE1001FB86C /* Goldbat.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEEB15183C5CE1001FB86C /* Goldbat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -478,6 +490,22 @@
 		93EEEAF618391C7B001FB86C /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		93EEEAF718391C7B001FB86C /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		93EEEAF918392630001FB86C /* Cloak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Cloak.wav; path = Resources/Sounds/Sprites/Cloak.wav; sourceTree = "<group>"; };
+		93EEEAFB183C5C56001FB86C /* demon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = demon.plist; path = Resources/Sprites/demon.plist; sourceTree = "<group>"; };
+		93EEEAFC183C5C56001FB86C /* demon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = demon.png; path = Resources/Sprites/demon.png; sourceTree = "<group>"; };
+		93EEEAFD183C5C56001FB86C /* dragon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = dragon.plist; path = Resources/Sprites/dragon.plist; sourceTree = "<group>"; };
+		93EEEAFE183C5C56001FB86C /* dragon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragon.png; path = Resources/Sprites/dragon.png; sourceTree = "<group>"; };
+		93EEEAFF183C5C56001FB86C /* goldbat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = goldbat.plist; path = Resources/Sprites/goldbat.plist; sourceTree = "<group>"; };
+		93EEEB00183C5C56001FB86C /* goldbat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goldbat.png; path = Resources/Sprites/goldbat.png; sourceTree = "<group>"; };
+		93EEEB01183C5C56001FB86C /* knight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = knight.plist; path = Resources/Sprites/knight.plist; sourceTree = "<group>"; };
+		93EEEB02183C5C56001FB86C /* knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knight.png; path = Resources/Sprites/knight.png; sourceTree = "<group>"; };
+		93EEEB0B183C5CA6001FB86C /* Knight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Knight.h; sourceTree = "<group>"; };
+		93EEEB0C183C5CA6001FB86C /* Knight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Knight.m; sourceTree = "<group>"; };
+		93EEEB0E183C5CB5001FB86C /* Dragon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dragon.h; sourceTree = "<group>"; };
+		93EEEB0F183C5CB5001FB86C /* Dragon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dragon.m; sourceTree = "<group>"; };
+		93EEEB11183C5CCC001FB86C /* Demon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demon.h; sourceTree = "<group>"; };
+		93EEEB12183C5CCC001FB86C /* Demon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Demon.m; sourceTree = "<group>"; };
+		93EEEB14183C5CE1001FB86C /* Goldbat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goldbat.h; sourceTree = "<group>"; };
+		93EEEB15183C5CE1001FB86C /* Goldbat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goldbat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -524,12 +552,20 @@
 			children = (
 				931ABB5A1809FC8900CD42F0 /* Ninja.h */,
 				931ABB5B1809FC8900CD42F0 /* Ninja.m */,
-				93BEFB70182320AB00BC601B /* Shuriken.h */,
-				93BEFB71182320CD00BC601B /* Shuriken.m */,
 				931ABB5118061F3B00CD42F0 /* Silverbat.h */,
+				931ABB5218061F3B00CD42F0 /* Silverbat.m */,
+				93EEEB14183C5CE1001FB86C /* Goldbat.h */,
+				93EEEB15183C5CE1001FB86C /* Goldbat.m */,
+				93EEEB0B183C5CA6001FB86C /* Knight.h */,
+				93EEEB0C183C5CA6001FB86C /* Knight.m */,
+				93EEEB0E183C5CB5001FB86C /* Dragon.h */,
+				93EEEB0F183C5CB5001FB86C /* Dragon.m */,
+				93EEEB11183C5CCC001FB86C /* Demon.h */,
+				93EEEB12183C5CCC001FB86C /* Demon.m */,
 				93EEEAF618391C7B001FB86C /* Item.h */,
 				93EEEAF718391C7B001FB86C /* Item.m */,
-				931ABB5218061F3B00CD42F0 /* Silverbat.m */,
+				93BEFB70182320AB00BC601B /* Shuriken.h */,
+				93BEFB71182320CD00BC601B /* Shuriken.m */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -1003,16 +1039,24 @@
 		93346DFA17F7CE9C00F944CB /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				93346E1817FA7C5A00F944CB /* ninja.plist */,
+				93346E1917FA7C5A00F944CB /* ninja.png */,
+				93346E1217FA6FC400F944CB /* silverbat.plist */,
+				93346E1317FA6FC400F944CB /* silverbat.png */,
+				93EEEAFF183C5C56001FB86C /* goldbat.plist */,
+				93EEEB00183C5C56001FB86C /* goldbat.png */,
+				93EEEB01183C5C56001FB86C /* knight.plist */,
+				93EEEB02183C5C56001FB86C /* knight.png */,
+				93EEEAFD183C5C56001FB86C /* dragon.plist */,
+				93EEEAFE183C5C56001FB86C /* dragon.png */,
+				93EEEAFB183C5C56001FB86C /* demon.plist */,
+				93EEEAFC183C5C56001FB86C /* demon.png */,
 				93EEEAF218391B40001FB86C /* smokeBomb.plist */,
 				93EEEAF318391B40001FB86C /* smokeBomb.png */,
 				93EEEAEC1838F77C001FB86C /* shurikenItem.plist */,
 				93EEEAED1838F77C001FB86C /* shurikenItem.png */,
 				93BEFB6C1823202400BC601B /* shuriken.plist */,
 				93BEFB6D1823202400BC601B /* shuriken.png */,
-				93346E1817FA7C5A00F944CB /* ninja.plist */,
-				93346E1917FA7C5A00F944CB /* ninja.png */,
-				93346E1217FA6FC400F944CB /* silverbat.plist */,
-				93346E1317FA6FC400F944CB /* silverbat.png */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -1116,16 +1160,21 @@
 			files = (
 				9328E4AC183208E800A52F82 /* introScreen.png in Resources */,
 				9328E49F1831E5E900A52F82 /* shurikenThrow.wav in Resources */,
+				93EEEB03183C5C56001FB86C /* demon.plist in Resources */,
 				93BEFB6F1823202400BC601B /* shuriken.png in Resources */,
 				93EEEAEF1838F77C001FB86C /* shurikenItem.png in Resources */,
+				93EEEB05183C5C56001FB86C /* dragon.plist in Resources */,
 				93EEEAEE1838F77C001FB86C /* shurikenItem.plist in Resources */,
 				93EEEAF1183910ED001FB86C /* itemGet.mp3 in Resources */,
+				93EEEB04183C5C56001FB86C /* demon.png in Resources */,
 				93346C6617F7CBDB00F944CB /* Icon-72.png in Resources */,
 				93346C6817F7CBDB00F944CB /* Icon-Small-50.png in Resources */,
 				93BB358B182751EA00BC4746 /* Default.png in Resources */,
 				93346C6A17F7CBDB00F944CB /* Icon-Small.png in Resources */,
 				93BEFB6E1823202400BC601B /* shuriken.plist in Resources */,
+				93EEEB0A183C5C56001FB86C /* knight.png in Resources */,
 				93EEEAFA18392630001FB86C /* Cloak.wav in Resources */,
+				93EEEB07183C5C56001FB86C /* goldbat.plist in Resources */,
 				93346C6C17F7CBDB00F944CB /* Icon-Small@2x.png in Resources */,
 				93346C6E17F7CBDB00F944CB /* Icon.png in Resources */,
 				93EEEAF518391B40001FB86C /* smokeBomb.png in Resources */,
@@ -1135,10 +1184,13 @@
 				9328E4B61832F54F00A52F82 /* fieldTheme.mp4 in Resources */,
 				93346C7317F7CBDB00F944CB /* iTunesArtwork in Resources */,
 				93BB35901827526700BC4746 /* Default-568h@2x.png in Resources */,
+				93EEEB06183C5C56001FB86C /* dragon.png in Resources */,
 				93346DCC17F7CBE000F944CB /* ChangeLog in Resources */,
 				93346E0F17FA64EE00F944CB /* field.jpeg in Resources */,
 				93346E1617FA6FC400F944CB /* silverbat.plist in Resources */,
+				93EEEB08183C5C56001FB86C /* goldbat.png in Resources */,
 				93EEEAF418391B40001FB86C /* smokeBomb.plist in Resources */,
+				93EEEB09183C5C56001FB86C /* knight.plist in Resources */,
 				93346E1717FA6FC400F944CB /* silverbat.png in Resources */,
 				93346E1A17FA7C5A00F944CB /* ninja.plist in Resources */,
 				93346E1B17FA7C5A00F944CB /* ninja.png in Resources */,
@@ -1160,6 +1212,7 @@
 				93346C8717F7CBDB00F944CB /* CCActionGrid3D.m in Sources */,
 				93346C8A17F7CBDB00F944CB /* CCActionInstant.m in Sources */,
 				93346C8D17F7CBDB00F944CB /* CCActionInterval.m in Sources */,
+				93EEEB0D183C5CA6001FB86C /* Knight.m in Sources */,
 				93346C9017F7CBDC00F944CB /* CCActionManager.m in Sources */,
 				93346C9317F7CBDC00F944CB /* CCActionPageTurn3D.m in Sources */,
 				93346C9617F7CBDC00F944CB /* CCActionProgressTimer.m in Sources */,
@@ -1203,6 +1256,7 @@
 				93346D0117F7CBDD00F944CB /* CCProgressTimer.m in Sources */,
 				9328E4AA1832052200A52F82 /* Intro.m in Sources */,
 				93346D0517F7CBDD00F944CB /* CCRenderTexture.m in Sources */,
+				93EEEB16183C5CE1001FB86C /* Goldbat.m in Sources */,
 				93346D0817F7CBDD00F944CB /* CCScene.m in Sources */,
 				93346D0B17F7CBDD00F944CB /* CCScheduler.m in Sources */,
 				93346D1D17F7CBDD00F944CB /* CCShaderCache.m in Sources */,
@@ -1238,6 +1292,7 @@
 				93346D7D17F7CBDF00F944CB /* CCArray.m in Sources */,
 				93346D8017F7CBDF00F944CB /* ccCArray.m in Sources */,
 				93EEEAF818391C7B001FB86C /* Item.m in Sources */,
+				93EEEB10183C5CB5001FB86C /* Dragon.m in Sources */,
 				93346D8317F7CBDF00F944CB /* CCFileUtils.m in Sources */,
 				93346D8617F7CBDF00F944CB /* CCProfiling.m in Sources */,
 				93346D8817F7CBDF00F944CB /* ccUtils.c in Sources */,
@@ -1269,6 +1324,7 @@
 				93346DE617F7CBE000F944CB /* vec4.c in Sources */,
 				93346DEB17F7CBE000F944CB /* main.m in Sources */,
 				93346DEE17F7CBE000F944CB /* AppDelegate.m in Sources */,
+				93EEEB13183C5CCC001FB86C /* Demon.m in Sources */,
 				93346DF117F7CBE000F944CB /* Game.m in Sources */,
 				93346DF417F7CBE000F944CB /* Launch.m in Sources */,
 			);

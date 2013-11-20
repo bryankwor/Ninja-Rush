@@ -188,10 +188,8 @@
                 [UI updateSmokeBombs:1];
                 [items removeObject:item];
                 [self removeChild:item cleanup:YES];
-
             }
         }
-
     }
     
     // Check if ninja is hit by any enemies

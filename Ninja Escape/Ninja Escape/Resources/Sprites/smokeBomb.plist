@@ -12,17 +12,17 @@
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{0, 0}, {35, 58}}</string>
+			<string>{{0, 0}, {30, 50}}</string>
 			<key>spriteOffset</key>
 			<string>{0, -0}</string>
 			<key>spriteSize</key>
-			<string>{35, 58}</string>
+			<string>{30, 50}</string>
 			<key>spriteSourceSize</key>
-			<string>{35, 58}</string>
+			<string>{30, 50}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{0, 60}, {35, 58}}</string>
+			<string>{{64, 0}, {30, 50}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -34,17 +34,17 @@
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{0, 0}, {35, 58}}</string>
+			<string>{{0, 0}, {30, 50}}</string>
 			<key>spriteOffset</key>
 			<string>{0, -0}</string>
 			<key>spriteSize</key>
-			<string>{35, 58}</string>
+			<string>{30, 50}</string>
 			<key>spriteSourceSize</key>
-			<string>{35, 58}</string>
+			<string>{30, 50}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{37, 0}, {35, 58}}</string>
+			<string>{{0, 0}, {30, 50}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -56,17 +56,17 @@
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{0, 0}, {35, 58}}</string>
+			<string>{{0, 0}, {30, 50}}</string>
 			<key>spriteOffset</key>
 			<string>{0, -0}</string>
 			<key>spriteSize</key>
-			<string>{35, 58}</string>
+			<string>{30, 50}</string>
 			<key>spriteSourceSize</key>
-			<string>{35, 58}</string>
+			<string>{30, 50}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{0, 0}, {35, 58}}</string>
+			<string>{{96, 0}, {30, 50}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -78,17 +78,17 @@
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{0, 0}, {35, 58}}</string>
+			<string>{{0, 0}, {30, 50}}</string>
 			<key>spriteOffset</key>
 			<string>{0, -0}</string>
 			<key>spriteSize</key>
-			<string>{35, 58}</string>
+			<string>{30, 50}</string>
 			<key>spriteSourceSize</key>
-			<string>{35, 58}</string>
+			<string>{30, 50}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{74, 0}, {35, 58}}</string>
+			<string>{{32, 0}, {30, 50}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -101,24 +101,13 @@
 		<key>format</key>
 		<integer>3</integer>
 		<key>size</key>
-		<string>{128, 256}</string>
+		<string>{128, 64}</string>
 		<key>name</key>
-		<string>Untitled</string>
-		<key>target</key>
-		<dict>
-			<key>name</key>
-			<string>default</string>
-			<key>textureFileName</key>
-			<string>smokeBomb</string>
-			<key>textureFileExtension</key>
-			<string>.png</string>
-			<key>coordinatesFileName</key>
-			<string>smokeBomb</string>
-			<key>coordinatesFileExtension</key>
-			<string>.plist</string>
-			<key>premultipliedAlpha</key>
-			<false/>
-		</dict>
+		<string>Untitled 2</string>
+		<key>textureFileName</key>
+		<string>smokeBomb.png</string>
+		<key>premultipliedAlpha</key>
+		<false/>
 	</dict>
 </dict>
 </plist>
