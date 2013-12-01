@@ -85,7 +85,7 @@
 
 -(CGRect) getBoundingBox
 {
-    CGRect boundingBox = CGRectMake((self.silverbat.position.x-self.silverbat.contentSize.width), (self.silverbat.position.y-self.silverbat.contentSize.height), self.silverbat.contentSize.width, self.silverbat.contentSize.height);
+    CGRect boundingBox = CGRectMake((self.silverbat.position.x-self.silverbat.contentSize.width/2), (self.silverbat.position.y-self.silverbat.contentSize.height/2), self.silverbat.contentSize.width, self.silverbat.contentSize.height);
     
     return boundingBox;
 }

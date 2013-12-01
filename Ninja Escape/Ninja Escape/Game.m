@@ -91,7 +91,7 @@
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
     // Initialize
-    CGRect ninjaBox = CGRectMake((ninja.position.x-ninja.contentSize.width/2), (ninja.position.y-ninja.contentSize.height/2), ninja.contentSize.width/2, ninja.contentSize.height/2);
+    CGRect ninjaBox = CGRectMake((ninja.position.x-ninja.contentSize.width/2), (ninja.position.y-ninja.contentSize.height/2), ninja.contentSize.width, ninja.contentSize.height);
     bool moveNinja = true;
     CGPoint location = [touch locationInView:[touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
@@ -152,7 +152,7 @@
 -(void) update:(ccTime)dt
 {
     // Initialize
-    CGRect ninjaBox = CGRectMake((ninja.position.x-ninja.contentSize.width/2), (ninja.position.y-ninja.contentSize.height/2), ninja.contentSize.width/2, ninja.contentSize.height/2);
+    CGRect ninjaBox = CGRectMake((ninja.position.x-ninja.contentSize.width/2), (ninja.position.y-ninja.contentSize.height/2), ninja.contentSize.width, ninja.contentSize.height);
     float gameTime = [UI getTime];
 
     // Check if level complete
@@ -166,9 +166,7 @@
     // Check if ninja picked up any items
     for (CCSprite *item in items)
     {
-        CGRect itemBox = [item boundingBox];
-        itemBox.size.height /= 4;
-        itemBox.size.width /= 4;
+        CGRect itemBox = CGRectMake((item.position.x-item.contentSize.width/2), (item.position.y-item.contentSize.height/2), item.contentSize.width, item.contentSize.height);
         
         if (CGRectIntersectsRect(ninjaBox, itemBox))
         {
@@ -198,8 +196,10 @@
         for (CCSprite *enemy in enemies)
         {
             CGRect enemyBox = [enemy getBoundingBox];
-            enemyBox.size.height /= 4;
-            enemyBox.size.width /= 4;
+            enemyBox.origin.x += 5;
+            enemyBox.origin.y += 5;
+            enemyBox.size.width -= 10;
+            enemyBox.size.height -= 10;
             
             if (CGRectIntersectsRect(ninjaBox, enemyBox))
             {
@@ -230,9 +230,8 @@
         for (CCSprite *enemy in enemies)
         {
             CGRect enemyBox = [enemy getBoundingBox];
-            CGRect shurikenBox = [shuriken getBoundingBox];
-            shurikenBox.origin.x = shuriken.position.x-shurikenBox.size.width/2;
-            shurikenBox.origin.y = shuriken.position.y-shurikenBox.size.height/2;
+            CGRect shurikenBox = CGRectMake((shuriken.position.x-shuriken.contentSize.width/2), (shuriken.position.y-shuriken.contentSize.height/2), shuriken.contentSize.width, shuriken.contentSize.height);
+
             if (CGRectIntersectsRect(shurikenBox, enemyBox))
                 [enemiesToDelete addObject:enemy];
         }

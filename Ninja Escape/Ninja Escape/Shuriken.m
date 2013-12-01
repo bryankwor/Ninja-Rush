@@ -55,7 +55,7 @@
 
 -(CGRect) getBoundingBox
 {
-    CGRect boundingBox = CGRectMake(0, 0, self.shuriken.contentSize.width/6, self.shuriken.contentSize.height/6);
+    CGRect boundingBox = CGRectMake((self.shuriken.position.x-self.shuriken.contentSize.width/2), (self.shuriken.position.y-self.shuriken.contentSize.height/2), self.shuriken.contentSize.width, self.shuriken.contentSize.height);
     
     return boundingBox;
 }

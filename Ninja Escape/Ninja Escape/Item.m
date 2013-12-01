@@ -55,12 +55,4 @@
     return self;
 }
 
--(CGRect) getBoundingBox
-{
-    CGRect boundingBox = CGRectMake(0, 0, self.item.contentSize.width/6, self.item.contentSize.height/6);
-    
-    return boundingBox;
-}
-
-
 @end
