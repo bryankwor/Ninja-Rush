@@ -30,7 +30,7 @@
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
         // Set background image
-        CCSprite *background = [CCSprite spriteWithFile:@"introScreen.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"IntroScreen.png"];
         background.position = ccp(screenSize.width/2, screenSize.height/2);
         [self addChild:background];
         background.rotation = 90;

@@ -33,7 +33,7 @@
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
 
         // Set background
-        CCSprite *background = [CCSprite spriteWithFile:@"introScreen.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"IntroScreen.png"];
         background.position = ccp(screenSize.width/2, screenSize.height/2);
         [self addChild:background];
         background.rotation = 90;
@@ -41,14 +41,25 @@
         // Start opening theme
 
         // Create and set button positions
-        playGame = [[CCSprite alloc] initWithFile:@"playGame.png"];
-        playGame.position = ccp(screenSize.width/2, screenSize.height/2);
-        viewHelp = [[CCSprite alloc] initWithFile:@"playGame.png"];
-        viewHelp.position = ccp(screenSize.width/2, screenSize.height/2-20);
+        playGame = [[CCSprite alloc] initWithFile:@"play.png"];
+        playGame.position = ccp(510, 190);
+        viewHelp = [[CCSprite alloc] initWithFile:@"controls.png"];
+        viewHelp.position = ccp(450, 150);
         
         // Add buttons to scene
         [self addChild:playGame];
         [self addChild:viewHelp];
+        
+        // Add graphics
+        Shuriken *playShuriken = [[Shuriken alloc] init];
+        playShuriken.position = ccp(440, 190);
+        playShuriken.scale *= 2;
+        [self addChild:playShuriken];
+        
+        Shuriken *controlsShuriken = [[Shuriken alloc] init];
+        controlsShuriken.position = ccp(320, 150);
+        controlsShuriken.scale *= 2;
+        [self addChild:controlsShuriken];
     }
     
     return self;

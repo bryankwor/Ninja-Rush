@@ -37,11 +37,29 @@
         shurikens = [[CCArray alloc] init];
         items  = [[CCArray alloc] init];
         
-        // Set background image and UI
+        // Setup background image and UI
         CCSprite *background = [CCSprite spriteWithFile:@"field.jpeg"];
         background.position = ccp(screenSize.width/2, screenSize.height/2);
         [self addChild:background];
+       
+        CCSprite *interface = [CCSprite spriteWithFile:@"UI.png"];
+        interface.position = ccp(screenSize.width/2, 290);
+        [self addChild:interface];
         
+        Item *shuriken = [[Item alloc] initWithFile:@"shurikenItem"];
+        shuriken.position = ccp(500, 305);
+        [self addChild:shuriken];
+    
+        Item *smokeBomb = [[Item alloc] initWithFile:@"smokeBomb"];
+        smokeBomb.position = ccp(500, 272);
+        [self addChild:smokeBomb];
+        
+        Item *hourglass = [[Item alloc] initWithFile:@"hourglass"];
+        hourglass.position = ccp(25, 272);
+        [self addChild:hourglass];
+
+        
+        // Obtain Game Data
         UI = [[GameData alloc] init];
         [self loadUI];
         [self addChild:UI];

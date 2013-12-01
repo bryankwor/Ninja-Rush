@@ -39,6 +39,12 @@
                 [itemFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"%@0%d.png",filename, i]]];
         }
         
+        if ([filename isEqual: @"hourglass"])
+        {
+            for (int i=1; i<=4; ++i)
+                [itemFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"%@0%d.png",filename, i]]];
+        }
+        
         // Create animation objects
         CCAnimation *itemAnim = [CCAnimation animationWithSpriteFrames:itemFrames delay:0.1f];
         

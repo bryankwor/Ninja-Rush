@@ -33,24 +33,29 @@ static GameData *data;
         // Create UI labels
         scoreLabel = [CCLabelTTF labelWithString:@"0"
                       fontName:@"Marker Felt"
-                      fontSize:24];
-        scoreLabel.position = ccp(538, 10);
+                      fontSize:20];
+        scoreLabel.position = ccp(265, 272);
+        scoreLabel.color = ccc3(0, 0, 0);
         timeLabel = [CCLabelTTF labelWithString:@"100"
                      fontName:@"Marker Felt"
-                     fontSize:24];
-        timeLabel.position = ccp(538, 30);
-        livesLabel = [CCLabelTTF labelWithString:@"3"
+                     fontSize:20];
+        timeLabel.position = ccp(55, 272);
+        timeLabel.color = ccc3(0, 0, 0);
+        livesLabel = [CCLabelTTF labelWithString:@"x 3"
                       fontName:@"Marker Felt"
                       fontSize:24];
-        livesLabel.position = ccp(538, 50);
-        shurikensLabel = [CCLabelTTF labelWithString:@"0"
+        livesLabel.position = ccp(55, 305);
+        livesLabel.color = ccc3(0, 0, 0);
+        shurikensLabel = [CCLabelTTF labelWithString:@"x 0"
                           fontName:@"Marker Felt"
-                          fontSize:24];
-        shurikensLabel.position = ccp(538, 70);
-        smokeBombsLabel = [CCLabelTTF labelWithString:@"0"
+                          fontSize:20];
+        shurikensLabel.position = ccp(530, 305);
+        shurikensLabel.color = ccc3(0, 0, 0);
+        smokeBombsLabel = [CCLabelTTF labelWithString:@"x 0"
                            fontName:@"Marker Felt"
-                           fontSize:24];
-        smokeBombsLabel.position = ccp(538, 90);
+                           fontSize:20];
+        smokeBombsLabel.position = ccp(530, 272);
+        smokeBombsLabel.color = ccc3(0, 0, 0);
         
         // Add labels to scene
         [self addChild:scoreLabel z:1];
@@ -81,19 +86,19 @@ static GameData *data;
 -(void) updateShurikens:(int)amount
 {
     shurikens += amount;
-    [shurikensLabel setString:[NSString stringWithFormat:@"%d", shurikens]];
+    [shurikensLabel setString:[NSString stringWithFormat:@"x %d", shurikens]];
 }
 
 -(void) updateSmokeBombs:(int)amount
 {
     smokeBombs += amount;
-    [smokeBombsLabel setString:[NSString stringWithFormat:@"%d", smokeBombs]];
+    [smokeBombsLabel setString:[NSString stringWithFormat:@"x %d", smokeBombs]];
 }
 
 -(BOOL) updateLives:(int)amount
 {
     lives += amount;
-    [livesLabel setString:[NSString stringWithFormat:@"%d", lives]];
+    [livesLabel setString:[NSString stringWithFormat:@"x %d", lives]];
     
     // False if out of lives
     if (lives < 0)
@@ -105,13 +110,13 @@ static GameData *data;
 -(void) loadLives:(int)amount
 {
     lives = amount;
-    [livesLabel setString:[NSString stringWithFormat:@"%d", lives]];
+    [livesLabel setString:[NSString stringWithFormat:@"x %d", lives]];
 }
 
 -(void) loadShurikens:(int)amount
 {
     shurikens = amount;
-    [shurikensLabel setString:[NSString stringWithFormat:@"%d", shurikens]];
+    [shurikensLabel setString:[NSString stringWithFormat:@"x %d", shurikens]];
 }
 
 -(float) getTime
