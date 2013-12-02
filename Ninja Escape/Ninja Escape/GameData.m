@@ -28,13 +28,18 @@ static GameData *data;
         time = 100;
         lives = 3;
         shurikens = 5;
-        smokeBombs = 0;
+        smokeBombs = 1;
         
         // Create UI labels
+        highScoreLabel = [CCLabelTTF labelWithString:@"0"
+                          fontName:@"Marker Felt"
+                          fontSize:16];
+        highScoreLabel.position = ccp(460, 308);
+        highScoreLabel.color = ccc3(0, 0, 0);
         scoreLabel = [CCLabelTTF labelWithString:@"0"
                       fontName:@"Marker Felt"
-                      fontSize:20];
-        scoreLabel.position = ccp(265, 272);
+                      fontSize:16];
+        scoreLabel.position = ccp(460, 288);
         scoreLabel.color = ccc3(0, 0, 0);
         timeLabel = [CCLabelTTF labelWithString:@"100"
                      fontName:@"Marker Felt"
@@ -58,6 +63,7 @@ static GameData *data;
         smokeBombsLabel.color = ccc3(0, 0, 0);
         
         // Add labels to scene
+        [self addChild:highScoreLabel z:1];
         [self addChild:scoreLabel z:1];
         [self addChild:timeLabel z:1];
         [self addChild:livesLabel z:1];
@@ -81,6 +87,12 @@ static GameData *data;
 {
     score += amount;
     [scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
+    
+    if (score > highScore)
+    {
+        highScore = score;
+        [highScoreLabel setString:[NSString stringWithFormat:@"%d", highScore]];
+    }
 }
 
 -(void) updateShurikens:(int)amount

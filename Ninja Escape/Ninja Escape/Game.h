@@ -14,6 +14,7 @@
 #import "Silverbat.h"
 #import "Shuriken.h"
 #import "Item.h"
+#import "Effects.h"
 
 @interface Game : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
@@ -28,6 +29,7 @@
     CCArray *enemies;
     CCArray *shurikens;
     CCArray *items;
+    CCArray *effects;
     
     GameData *UI;
 }

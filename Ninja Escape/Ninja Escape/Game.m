@@ -36,6 +36,7 @@
         enemies = [[CCArray alloc] init];
         shurikens = [[CCArray alloc] init];
         items  = [[CCArray alloc] init];
+        effects = [[CCArray alloc] init];
         
         // Setup background image and UI
         CCSprite *background = [CCSprite spriteWithFile:@"field.jpeg"];
@@ -113,32 +114,34 @@
     bool moveNinja = true;
     CGPoint location = [touch locationInView:[touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
+    float distance = powf(powf(location.x-ninja.position.x, 2) + powf(location.y-ninja.position.y, 2), .5);
     
-    // Shoot shuriken if available at any enemies touched
-    if (UI.shurikens != 0)
+    // Shoot shuriken if available at any enemies touched and are in range
+    if (UI.shurikens != 0 && distance < 120)
     {
         for (CCSprite *enemy in enemies)
         {
             CGRect boundingBox = [enemy getBoundingBox];
-            
+     
             if (CGRectContainsPoint(boundingBox, location))
             {
                 // Ninja shouldn't move if shooting
                 moveNinja = false;
                 [[SimpleAudioEngine sharedEngine] playEffect:@"shurikenThrow.wav"];
-                
+                    
                 // Create shuriken starting at player and shoot towards enemy
                 Shuriken *shuriken = [[Shuriken alloc] init];
                 shuriken.position = ninja.position;
                 [shuriken moveToPosition:location];
-                
+                    
                 // Add to scene
                 [shurikens addObject:shuriken];
                 [self addChild:shuriken];
-                
+                    
                 // Update number of available shurikens
                 [UI updateShurikens:-1];
             }
+            
         }
     }
     
@@ -152,6 +155,11 @@
             [[SimpleAudioEngine sharedEngine] playEffect:@"Cloak.wav"];
             
             // Execute smoke bomb animation
+            Effects *smoke = [[Effects alloc] initWithFile:@"smoke"];
+            smoke.position = ninja.position;
+            smoke.tag = 3;
+            [effects addObject:smoke];
+            [self addChild:smoke];
             
             // Set invincibility
             timeInvincible = 5;
@@ -180,6 +188,22 @@
     // Check if out of time
     if (gameTime < 0)
         [self timeOut];
+    
+    // Check for smoke bomb animation
+    if (effects.count > 0)
+    {
+        for (CCSprite *effect in effects)
+        {
+            if (effect.tag == 3)
+            {
+                if ([effect timeTick:1])
+                {
+                    [effects removeObject:effect];
+                    [self removeChild:effect cleanup:YES];
+                }
+            }
+        }
+    }
     
     // Check if ninja picked up any items
     for (CCSprite *item in items)
@@ -251,7 +275,10 @@
             CGRect shurikenBox = CGRectMake((shuriken.position.x-shuriken.contentSize.width/2), (shuriken.position.y-shuriken.contentSize.height/2), shuriken.contentSize.width, shuriken.contentSize.height);
 
             if (CGRectIntersectsRect(shurikenBox, enemyBox))
+            {
                 [enemiesToDelete addObject:enemy];
+                break;
+            }
         }
         
         for (CCSprite *enemy in enemiesToDelete)

@@ -183,6 +183,9 @@
 		93EEEB58184BD2F4001FB86C /* smokeBomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB52184BD2F4001FB86C /* smokeBomb.png */; };
 		93EEEB5B184BD997001FB86C /* hourglass.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB59184BD997001FB86C /* hourglass.plist */; };
 		93EEEB5C184BD997001FB86C /* hourglass.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB5A184BD997001FB86C /* hourglass.png */; };
+		93EEEB66184C5E36001FB86C /* smoke.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB64184C5E36001FB86C /* smoke.plist */; };
+		93EEEB67184C5E36001FB86C /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB65184C5E36001FB86C /* smoke.png */; };
+		93EEEB6B184C5E91001FB86C /* Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEEB6A184C5E91001FB86C /* Effects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -520,6 +523,10 @@
 		93EEEB52184BD2F4001FB86C /* smokeBomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smokeBomb.png; path = Resources/Sprites/Items/smokeBomb.png; sourceTree = "<group>"; };
 		93EEEB59184BD997001FB86C /* hourglass.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = hourglass.plist; path = Resources/Sprites/UI/hourglass.plist; sourceTree = "<group>"; };
 		93EEEB5A184BD997001FB86C /* hourglass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hourglass.png; path = Resources/Sprites/UI/hourglass.png; sourceTree = "<group>"; };
+		93EEEB64184C5E36001FB86C /* smoke.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = smoke.plist; path = Resources/Effects/smoke.plist; sourceTree = "<group>"; };
+		93EEEB65184C5E36001FB86C /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smoke.png; path = Resources/Effects/smoke.png; sourceTree = "<group>"; };
+		93EEEB69184C5E91001FB86C /* Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effects.h; sourceTree = "<group>"; };
+		93EEEB6A184C5E91001FB86C /* Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effects.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -564,6 +571,7 @@
 		9328E4A41832034D00A52F82 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				93EEEB68184C5E7A001FB86C /* Effects */,
 				93EEEB5F184BD9D5001FB86C /* Player */,
 				93EEEB5E184BD9C5001FB86C /* Items */,
 				93EEEB5D184BD9A4001FB86C /* Enemies */,
@@ -664,6 +672,7 @@
 		93346C5C17F7CBDB00F944CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				93EEEB63184C5DEE001FB86C /* Effects */,
 				9328E4AD1832093F00A52F82 /* Buttons */,
 				93BB3588182750C200BC4746 /* Launch Images */,
 				93BB35911827589600BC4746 /* Icons */,
@@ -1179,6 +1188,24 @@
 			name = Player;
 			sourceTree = "<group>";
 		};
+		93EEEB63184C5DEE001FB86C /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				93EEEB64184C5E36001FB86C /* smoke.plist */,
+				93EEEB65184C5E36001FB86C /* smoke.png */,
+			);
+			name = Effects;
+			sourceTree = "<group>";
+		};
+		93EEEB68184C5E7A001FB86C /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				93EEEB69184C5E91001FB86C /* Effects.h */,
+				93EEEB6A184C5E91001FB86C /* Effects.m */,
+			);
+			name = Effects;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1263,6 +1290,7 @@
 				93EEEB5C184BD997001FB86C /* hourglass.png in Resources */,
 				93EEEB1A184B1CE8001FB86C /* play.png in Resources */,
 				93EEEB35184BBD9E001FB86C /* goldbat.png in Resources */,
+				93EEEB66184C5E36001FB86C /* smoke.plist in Resources */,
 				93EEEB38184BBD9E001FB86C /* silverbat.plist in Resources */,
 				93EEEB47184BBFC6001FB86C /* Icon-Small@2x.png in Resources */,
 				93BB358C182751EA00BC4746 /* Default@2x.png in Resources */,
@@ -1271,6 +1299,7 @@
 				9328E4B61832F54F00A52F82 /* fieldTheme.mp4 in Resources */,
 				93EEEB44184BBFC6001FB86C /* Icon-h@2x.png in Resources */,
 				93346C7317F7CBDB00F944CB /* iTunesArtwork in Resources */,
+				93EEEB67184C5E36001FB86C /* smoke.png in Resources */,
 				93BB35901827526700BC4746 /* Default-568h@2x.png in Resources */,
 				93346DCC17F7CBE000F944CB /* ChangeLog in Resources */,
 				93346E0F17FA64EE00F944CB /* field.jpeg in Resources */,
@@ -1400,6 +1429,7 @@
 				93346DD617F7CBE000F944CB /* mat4.c in Sources */,
 				93346DD817F7CBE000F944CB /* neon_matrix_impl.c in Sources */,
 				93346DDA17F7CBE000F944CB /* plane.c in Sources */,
+				93EEEB6B184C5E91001FB86C /* Effects.m in Sources */,
 				93346DDC17F7CBE000F944CB /* quaternion.c in Sources */,
 				93346DDE17F7CBE000F944CB /* ray2.c in Sources */,
 				93346DE017F7CBE000F944CB /* utility.c in Sources */,

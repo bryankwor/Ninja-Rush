@@ -12,11 +12,8 @@
 @interface Item : CCSprite
 {
     CCSprite *item;
-
 }
 
 @property (nonatomic, strong) CCSprite *item;
-
--(CGRect) getBoundingBox;
 
 @end

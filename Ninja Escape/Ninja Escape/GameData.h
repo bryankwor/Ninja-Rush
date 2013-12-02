@@ -12,6 +12,7 @@
 @interface GameData : CCLayer
 {
     @public
+        int highScore;
         int score;
         float time;
         int lives;
@@ -19,6 +20,7 @@
         int smokeBombs;
     
     @private
+        CCLabelTTF *highScoreLabel;
         CCLabelTTF *scoreLabel;
         CCLabelTTF *timeLabel;
         CCLabelTTF *livesLabel;
@@ -26,6 +28,7 @@
         CCLabelTTF *smokeBombsLabel;
 }
 
+@property int highScore;
 @property int score;
 @property float time;
 @property int lives;

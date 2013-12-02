@@ -6,7 +6,7 @@
 //  Copyright 2013 Bryan Worrell. All rights reserved.
 //
 
-#import "item.h"
+#import "Item.h"
 
 
 @implementation Item
