@@ -19,7 +19,7 @@
     if ((self = [super init]))
     {
         // Initialize
-        timer = 24;
+        timer = 130;
         
         // Cache sprite frames
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", filename]];

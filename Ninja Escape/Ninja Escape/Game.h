@@ -30,6 +30,7 @@
     CCArray *shurikens;
     CCArray *items;
     CCArray *effects;
+    CCArray *hearts;
     
     GameData *UI;
 }

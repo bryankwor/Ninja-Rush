@@ -8,6 +8,7 @@
 
 #import "Intro.h"
 #import "Game.h"
+#import "Help.h"
 #import "CCTouchDispatcher.h"
 
 @implementation Intro
@@ -88,11 +89,9 @@
     
     // Display help if help is touched
     boundingBox = [viewHelp boundingBox];
-    /*
+    
     if (CGRectContainsPoint(boundingBox, location))
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[Help scene]]];
-    */
-    
 }
 
 @end

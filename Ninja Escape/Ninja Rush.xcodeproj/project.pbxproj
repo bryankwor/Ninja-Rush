@@ -186,6 +186,8 @@
 		93EEEB66184C5E36001FB86C /* smoke.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB64184C5E36001FB86C /* smoke.plist */; };
 		93EEEB67184C5E36001FB86C /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB65184C5E36001FB86C /* smoke.png */; };
 		93EEEB6B184C5E91001FB86C /* Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEEB6A184C5E91001FB86C /* Effects.m */; };
+		93EEEB6D184EBE96001FB86C /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EEEB6C184EBE96001FB86C /* help.png */; };
+		93EEEB70184EBEDA001FB86C /* Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEEB6F184EBEDA001FB86C /* Help.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -527,6 +529,9 @@
 		93EEEB65184C5E36001FB86C /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smoke.png; path = Resources/Effects/smoke.png; sourceTree = "<group>"; };
 		93EEEB69184C5E91001FB86C /* Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effects.h; sourceTree = "<group>"; };
 		93EEEB6A184C5E91001FB86C /* Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effects.m; sourceTree = "<group>"; };
+		93EEEB6C184EBE96001FB86C /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = Resources/Backgrounds/help.png; sourceTree = "<group>"; };
+		93EEEB6E184EBEDA001FB86C /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
+		93EEEB6F184EBEDA001FB86C /* Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Help.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -590,6 +595,8 @@
 				9328E4A91832052200A52F82 /* Intro.m */,
 				9328E4B01832E39200A52F82 /* GameOver.h */,
 				9328E4B11832E39200A52F82 /* GameOver.m */,
+				93EEEB6E184EBEDA001FB86C /* Help.h */,
+				93EEEB6F184EBEDA001FB86C /* Help.m */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -1061,6 +1068,7 @@
 		93346E0B17FA648A00F944CB /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				93EEEB6C184EBE96001FB86C /* help.png */,
 				93EEEB4A184BC43F001FB86C /* IntroScreen.png */,
 				93EEEB17184B1C9C001FB86C /* UI.png */,
 				93346E0E17FA64EE00F944CB /* field.jpeg */,
@@ -1292,6 +1300,7 @@
 				93EEEB35184BBD9E001FB86C /* goldbat.png in Resources */,
 				93EEEB66184C5E36001FB86C /* smoke.plist in Resources */,
 				93EEEB38184BBD9E001FB86C /* silverbat.plist in Resources */,
+				93EEEB6D184EBE96001FB86C /* help.png in Resources */,
 				93EEEB47184BBFC6001FB86C /* Icon-Small@2x.png in Resources */,
 				93BB358C182751EA00BC4746 /* Default@2x.png in Resources */,
 				93EEEB53184BD2F4001FB86C /* shuriken.plist in Resources */,
@@ -1412,6 +1421,7 @@
 				931ABB5C1809FC8900CD42F0 /* Ninja.m in Sources */,
 				93346D8C17F7CBDF00F944CB /* CCVertex.m in Sources */,
 				93346D8F17F7CBDF00F944CB /* CGPointExtension.m in Sources */,
+				93EEEB70184EBEDA001FB86C /* Help.m in Sources */,
 				93346D9217F7CBDF00F944CB /* NSThread+performBlock.m in Sources */,
 				93346D9617F7CBDF00F944CB /* TGAlib.m in Sources */,
 				93346D9917F7CBDF00F944CB /* TransformUtils.m in Sources */,

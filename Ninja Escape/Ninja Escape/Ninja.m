@@ -10,6 +10,7 @@
 
 @implementation Ninja
 
+@synthesize health;
 @synthesize ninjaDown;
 @synthesize ninjaSide;
 @synthesize ninjaUp;
@@ -23,6 +24,7 @@
         ninjaVelocity = screenSize.width / 6.0;
         ninjaMoving = NO;
         ninjaMove = nil;
+        self.health = 3;
         
         // Gather animation frames
         NSMutableArray *ninjaDownFrames = [NSMutableArray array];
@@ -101,6 +103,17 @@
     
     [self runAction:ninjaMove];
     ninjaMoving = YES;
+}
+
+-(BOOL) changeHealth:(int)amount
+{
+    self.health += amount;
+    
+    if (self.health == 0)
+        return TRUE;
+    else
+        return FALSE;
+    
 }
 
 -(void) stopActions

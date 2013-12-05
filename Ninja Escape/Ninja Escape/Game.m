@@ -37,6 +37,7 @@
         shurikens = [[CCArray alloc] init];
         items  = [[CCArray alloc] init];
         effects = [[CCArray alloc] init];
+        hearts = [[CCArray alloc] init];
         
         // Setup background image and UI
         CCSprite *background = [CCSprite spriteWithFile:@"field.jpeg"];
@@ -58,7 +59,16 @@
         Item *hourglass = [[Item alloc] initWithFile:@"hourglass"];
         hourglass.position = ccp(25, 272);
         [self addChild:hourglass];
-
+        
+        int offset = 15;
+        for (int i=0; i<3; ++i)
+        {
+            CCSprite *heart = [[CCSprite alloc] initWithFile:@"heart.png"];
+            heart.position = ccp(90+(offset*i), 305);
+            heart.scale *= 1.5;
+            [hearts addObject:heart];
+            [self addChild:heart];
+        }
         
         // Obtain Game Data
         UI = [[GameData alloc] init];
@@ -158,6 +168,7 @@
             Effects *smoke = [[Effects alloc] initWithFile:@"smoke"];
             smoke.position = ninja.position;
             smoke.tag = 3;
+            smoke.scale *= 2;
             [effects addObject:smoke];
             [self addChild:smoke];
             
@@ -201,6 +212,8 @@
                     [effects removeObject:effect];
                     [self removeChild:effect cleanup:YES];
                 }
+                else
+                    effect.position = ninja.position;
             }
         }
     }
@@ -238,25 +251,43 @@
         for (CCSprite *enemy in enemies)
         {
             CGRect enemyBox = [enemy getBoundingBox];
-            enemyBox.origin.x += 5;
-            enemyBox.origin.y += 5;
-            enemyBox.size.width -= 10;
-            enemyBox.size.height -= 10;
             
             if (CGRectIntersectsRect(ninjaBox, enemyBox))
             {
-                // If lives > 0, reset ninja
-                if ([UI updateLives:-1])
+                BOOL dead = [ninja changeHealth:-1];
+                if (dead)
                 {
-                    ninja.position = ccp(screenSize.width/12, screenSize.height/2);
-                    [ninja stopActions];
+                    // If lives > 0, reset ninja
+                    if ([UI updateLives:-1])
+                    {
+                        ninja.health = 3;
+                        ninja.position = ccp(screenSize.width/12, screenSize.height/2);
+                        [ninja stopActions];
+                    
+                        for (CCSprite *heart in hearts)
+                            [heart setTexture:[[CCSprite spriteWithFile:@"heart.png"]texture]];
+                    }
+                    // Otherwise game over
+                    else
+                    {
+                        ninja.health = 3;
+                        ninja.position = ccp(screenSize.width/12, screenSize.height/2);
+                        [ninja stopActions];
+                        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+                        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[GameOver scene]]];
+                    }
                 }
-                // Otherwise game over
                 else
                 {
+                    // Set invincibility
+                    timeInvincible = 2;
+                    ninjaInvulnerable = TRUE;
+                    ninja.position = ccp(screenSize.width/12, screenSize.height/2);
                     [ninja stopActions];
-                    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-                    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameOver scene]]];
+                    
+                    // Change heart
+                    CCSprite *heart = [hearts objectAtIndex:ninja.health];
+                    [heart setTexture:[[CCSprite spriteWithFile:@"dmgHeart.png"]texture]];
                 }
             }
         }
